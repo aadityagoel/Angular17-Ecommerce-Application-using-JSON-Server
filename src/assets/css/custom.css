@@ -1,0 +1,19 @@
+
+header nav.header-fancy .brand {
+    padding: 0px;
+}
+
+.brand .logo {
+    width: 75%;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+p {
+    margin-bottom: 0 !important;
+}
+.mt-50{
+    margin-top: 50px;
+}

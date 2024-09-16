@@ -1,0 +1,117 @@
+<section id="doctor" class="section-ptb-80">
+    <div class="container">
+        <div class="row mt-75">
+            <div class="col-12">
+                <div class="section-heading text-center max-width-550 mx-auto">
+                    <h1 class="heading">Our Specialised Team</h1>
+                    <p>Meet our esteemed faculty, comprised of leading experts in the field of Fetal Medicine, dedicated
+                        to
+                        guiding you towards excellence in prenatal care.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-50">
+            <div class="col-md-4 col-12 xs-mb-30" *ngFor="let doctor_data of all_doctor_data; let i = index">
+                <div class="team team-hover team-shadow">
+                    <div class="team-photo">
+                        <img class="img-fluid mx-auto" src="{{doctor_data.image_url}}" alt="">
+                    </div>
+                    <div class="team-description">
+                        <div class="team-info">
+                            <h4><a href="#"> {{doctor_data.name}}</a></h4>
+                        </div>
+                        <div class="team-contact">
+                            <p class="fs-16 mb-10"> {{doctor_data.specialist}} </p>
+                        </div>
+                        <div class="team-contact">
+                            <a class="fs-16 mb-10 cs-button medium" href="{{doctor_data.cv_pdf}}">View CV</a>
+                        </div>
+                        <div class="social-icons social-border rounded color-hover clearfix">
+                            <ul>
+                                <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="social-instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 xs-mb-30">
+                <div class="team team-hover team-shadow">
+                    <div class="team-photo">
+                        <img class="img-fluid mx-auto" src="../../../../assets/images/team/Dr_Ashok_Khurana.png" alt="">
+                    </div>
+                    <div class="team-description">
+                        <div class="team-info">
+                            <h4><a href="#"> Dr. Ashok Khurana</a></h4>
+                        </div>
+                        <div class="team-contact">
+                            <p class="fs-16 mb-10"> Medicine Specialist </p>
+                        </div>
+                        <div class="team-contact">
+                            <a class="fs-16 mb-10 cs-button medium" href="#">View CV</a>
+                        </div>
+                        <div class="social-icons social-border rounded color-hover clearfix">
+                            <ul>
+                                <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="social-instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 xs-mb-30">
+                <div class="team team-hover team-shadow">
+                    <div class="team-photo">
+                        <img class="img-fluid mx-auto" src="../../../../assets/images/team/team-5.jpg" alt="">
+                    </div>
+                    <div class="team-description">
+                        <div class="team-info">
+                            <h4><a href="team-single.html"> Druid Wensleydale</a></h4>
+                        </div>
+                        <div class="team-contact">
+                            <p class="fs-16 mb-10"> Medicine Specialist </p>
+                        </div>
+                        <div class="social-icons social-border rounded color-hover clearfix">
+                            <ul>
+                                <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="social-instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                <div class="team team-hover team-shadow">
+                    <div class="team-photo">
+                        <img class="img-fluid mx-auto" src="../../../../assets/images/team/team-7.jpg" alt="">
+                    </div>
+                    <div class="team-description">
+                        <div class="team-info">
+                            <h4><a href="team-single.html"> Phillip Anthropy</a></h4>
+                        </div>
+                        <div class="team-contact">
+                            <p class="fs-16 mb-10"> Medicine Specialist </p>
+                        </div>
+                        <div class="social-icons social-border rounded color-hover clearfix">
+                            <ul>
+                                <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="social-instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-30 mt-30 text-center d-none">
+            <a class="cs-button medium" href="#">View All</a>
+        </div>
+    </div>
+</section>

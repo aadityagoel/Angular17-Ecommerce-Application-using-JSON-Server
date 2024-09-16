@@ -1,7 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-none">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">TC_ECOM</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -45,23 +46,84 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
-      <ul class="navbar-nav ml-auto"  *ngIf="!logged_in">
+      <ul class="navbar-nav ml-auto" *ngIf="!logged_in">
         <li class="nav-item">
-            <a class="nav-link" routerLink="/sign-in">Sign In</a>
+          <a class="nav-link" routerLink="/sign-in">Sign In</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLink="/sign-up">Sign Up</a>
+          <a class="nav-link" routerLink="/sign-up">Sign Up</a>
         </li>
-    </ul>
-    <ul class="navbar-nav ml-auto" *ngIf="logged_in">
+      </ul>
+      <ul class="navbar-nav ml-auto" *ngIf="logged_in">
         <li class="nav-item">
-            <a class="nav-link sim-pointer" routerLink="/my-profile">My Profile</a>
+          <a class="nav-link sim-pointer" routerLink="/my-profile">My Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link sim-pointer" (click)="logout()">Log Out</a>
+          <a class="nav-link sim-pointer" (click)="logout()">Log Out</a>
         </li>
-    </ul>
+      </ul>
 
     </div>
   </div>
 </nav>
+<header class="top-bar header-fancy-topbar">
+  <div class="topbar">
+    <div class="container">
+      <div class="row justify-content-end">
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="topbar-social text-center text-md-left">
+            <ul class="list-inline d-md-flex">
+              <li><a href="#"><span class="ti-facebook"></span></a></li>
+              <li><a href="#"><span class="ti-instagram"></span></a></li>
+              <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+              <li><a href="#"><span class="ti-linkedin"></span></a></li>
+              <li><a href="#"><span class="ti-dribbble"></span></a></li>
+              <!-- <li><a class="nav-link" routerLink="/admin-login">Admin Login</a></li> -->
+
+              <li class="" *ngIf="!logged_in"> <a class="" routerLink="/sign-in">Sign In</a> </li>
+              <li class="" *ngIf="!logged_in"> <a class="" routerLink="/sign-up">Sign Up</a> </li>
+
+              <li class="" *ngIf="logged_in"> <a class="" routerLink="/my-profile">My Profile</a> </li>
+              <li class="" *ngIf="logged_in"> <a class="" (click)="logout()">Log Out</a> </li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12 xs-mb-10">
+          <div class="topbar-call text-center text-md-right">
+            <ul class="list-inline d-md-flex d-inline-block justify-content-end">
+              <li><i class="fa fa-envelope"></i>infopregnancycare.com</li>
+              <li><i class="fa fa-phone"></i> <a href="tel:+1234567890"> <span>+(123) 456-7890 </span>
+                </a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="stand-sticky h-0" style="height: 80px; display: none;"></div>
+  <nav class="nav-white header-fancy core-nav nav-core-sticky fixed-top">
+    <div class="nav-container">
+      <div class="nav-header right">
+        <a href="index.html" class="brand">
+          <img src="../../../../assets/images/brand/logo-470-270.png" class="img-fluid logo" alt="">
+        </a>
+        <button class="toggle-bar core-nav-toggle">
+          <span class="ti-menu"></span>
+        </button>
+      </div>
+      <div class="wrap-core-nav-list right">
+        <ul class="menu core-nav-list">
+          <li class="scrollspy active"><a href="/home">Home</a></li>
+          <!-- <li class="scrollspy"><a href="#services">Services</a></li> -->
+          <!-- <li class="scrollspy"><a href="#appointment">Appointment</a></li> -->
+          <!-- <li class="scrollspy"><a href="#testimonials">Testimonials</a></li> -->
+          <li class="scrollspy"><a routerLink="/doctors">Doctor</a></li>
+          <!-- <li class="scrollspy"><a href="#blog">News</a></li> -->
+          <li class="scrollspy"><a routerLink="/contact-us">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="dropdown-overlay"></div>
+</header>
