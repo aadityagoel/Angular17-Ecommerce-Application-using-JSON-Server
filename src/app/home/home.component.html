@@ -14,7 +14,7 @@
             data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
             data-description="">
             <!-- MAIN IMAGE -->
-            <img src="../../../../assets/images/travel2.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
+            <img src="../../assets/images/travel2.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
               data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
             <!-- LAYERS -->
           </li>
@@ -25,12 +25,12 @@
             data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
             data-param10="" data-description="">
             <!-- MAIN IMAGE -->
-            <img src="../../../../assets/images/travel3.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
+            <img src="../../assets/images/travel2.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
               data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
             <!-- LAYERS -->
           </li>
         </ul>
-        <div style="" class="tp-static-layers">
+        <div class="tp-static-layers">
           <!-- LAYER NR. 1 -->
           <div class="tp-caption Travel-BigCaption   tp-resizeme tp-static-layer" id="slider-1083-layer-1"
             data-x="['left','left','left','left']" data-hoffset="['90','90','60','40']"
@@ -79,9 +79,9 @@
 <!-- End Slider -->
 
 <section id="services" class="section-ptb-0">
-  <div class="row ">
+  <div class="row">
     <div class="col-lg-6 col-12" data-jarallax='{"speed": 0.0}'
-      style="background-image: url(../../../../assets/images/about.jpg);">
+      style="background-image: url(../../assets/images/about.jpg);">
       <div class="px-100 py-140 sm-pl-30 sm-pr-30 sm-pb-30 sm-pt-30 text-right xs-text-center">
         <div class="section-heading text-right">
           <h6 class="sub-heading">About us</h6>
@@ -183,7 +183,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container d-none">
     <div class="row mt-80">
       <div class="col-md-4 col-12">
         <div class="feature-txt text-center mb-50">
@@ -236,7 +236,7 @@
     <div class="row">
       <div class="col-md-6 col-12">
         <div class="section-heading text-left mb-50">
-          <h1 class="heading">Fix an Appointment</h1>
+          <h1 class="heading">Register Yourself With Us</h1>
         </div>
 
         <form class="mt-30" action="#" id="contact" name="contact" method="post">
@@ -252,7 +252,7 @@
               <input type="text" class="form-control" name="InputPhone" id="InputPhone" placeholder="Phone Number"
                 required>
             </div>
-            <div class="form-field clearfix">
+            <div class="form-field clearfix d-none">
               <select class="wide">
                 <option value="2">Type of Service</option>
                 <option value="1">Some option</option>
@@ -261,14 +261,14 @@
                 <option value="5">Potato</option>
               </select>
             </div>
-            <div class="form-field">
+            <div class="form-field d-none">
               <input type="date" class="form-control" id='datetimepicker1' placeholder="Select Date" />
             </div>
-            <div class="form-field">
+            <div class="form-field d-none">
               <input type="time" class="form-control" id='datetimepicker1' placeholder="Select Time" />
             </div>
             <div class="form-field w-100">
-              <button name="submit" type="submit" class="cs-button"> Check Availability </button>
+              <button name="submit" type="submit" class="cs-button"> Register </button>
             </div>
           </div>
         </form>
@@ -408,92 +408,49 @@
   </section>
 </div>
 
-<!-- <app-doctors></app-doctors> -->
 <section id="doctor" class="section-ptb-80">
   <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="section-heading text-center max-width-550 mx-auto">
-          <h1 class="heading">Our Specialised Team</h1>
-          <p>Meet our esteemed faculty, comprised of leading experts in the field of Fetal Medicine, dedicated to
-            guiding you towards excellence in prenatal care.</p>
-        </div>
+      <div class="row">
+          <div class="col-12">
+              <div class="section-heading text-center max-width-550 mx-auto">
+                  <h1 class="heading">Our Specialised Team</h1>
+                  <p>Meet our esteemed faculty, comprised of leading experts in the field of Fetal Medicine, dedicated
+                      to
+                      guiding you towards excellence in prenatal care.</p>
+              </div>
+          </div>
       </div>
-    </div>
-    <div class="row mt-50">
-      <div class="col-md-4 col-12 xs-mb-30">
-        <div class="team team-hover team-shadow">
-          <div class="team-photo">
-            <img class="img-fluid mx-auto" src="../../../../assets/images/team/Dr_Ashok_Khurana.png" alt="">
+      <div class="row mt-50">
+          <div class="col-md-4 col-12 mb-30 xs-mb-30" *ngFor="let doctor_data of topThreeDoctors; let i = index">
+              <div class="team team-hover team-shadow">
+                  <div class="team-photo">
+                      <img class=" mx-auto" width="350px" height="350px" src="{{doctor_data.image_url}}" alt="">
+                  </div>
+                  <div class="team-description">
+                      <div class="team-info">
+                          <h4><a href="#"> {{doctor_data.name}}</a></h4>
+                      </div>
+                      <div class="team-contact">
+                          <p class="fs-16 mb-10"> {{doctor_data.specialist}} </p>
+                      </div>
+                      <div class="team-contact">
+                          <a class="fs-16 mb-10 cs-button medium" href="{{doctor_data.cv_pdf}}">View CV</a>
+                      </div>
+                      <div class="social-icons social-border rounded color-hover clearfix">
+                          <ul>
+                              <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                              <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                              <li class="social-instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                              <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
           </div>
-          <div class="team-description">
-            <div class="team-info">
-              <h4><a href="team-single.html"> Dr. Ashok Khurana</a></h4>
-            </div>
-            <div class="team-contact">
-              <p class="fs-16 mb-10"> Medicine Specialist </p>
-            </div>
-            <div class="social-icons social-border rounded color-hover clearfix">
-              <ul>
-                <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li class="social-instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
-      <div class="col-md-4 col-12 xs-mb-30">
-        <div class="team team-hover team-shadow">
-          <div class="team-photo">
-            <img class="img-fluid mx-auto" src="../../../../assets/images/team/team-5.jpg" alt="">
-          </div>
-          <div class="team-description">
-            <div class="team-info">
-              <h4><a href="team-single.html"> Druid Wensleydale</a></h4>
-            </div>
-            <div class="team-contact">
-              <p class="fs-16 mb-10"> Medicine Specialist </p>
-            </div>
-            <div class="social-icons social-border rounded color-hover clearfix">
-              <ul>
-                <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li class="social-instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div class="mt-30 mt-30 text-center">
+          <a class="cs-button medium" routerLink="/doctors">View All</a>
       </div>
-      <div class="col-md-4 col-12">
-        <div class="team team-hover team-shadow">
-          <div class="team-photo">
-            <img class="img-fluid mx-auto" src="../../../../assets/images/team/team-7.jpg" alt="">
-          </div>
-          <div class="team-description">
-            <div class="team-info">
-              <h4><a href="team-single.html"> Phillip Anthropy</a></h4>
-            </div>
-            <div class="team-contact">
-              <p class="fs-16 mb-10"> Medicine Specialist </p>
-            </div>
-            <div class="social-icons social-border rounded color-hover clearfix">
-              <ul>
-                <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li class="social-instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="mt-30 mt-30 text-center">
-      <a class="cs-button medium" href="#">View All</a>
-    </div>
   </div>
 </section>
 
@@ -678,7 +635,8 @@
   </div>
 </section>
 
-<section id="contactus" class="section-ptb-0 bg-overlay-white-50" data-jarallax='{"speed": 0.0}'
+<app-contact-us></app-contact-us>
+<section id="contactus" class="section-ptb-0 bg-overlay-white-50 d-none" data-jarallax='{"speed": 0.0}'
   style="background-image: url(../../../../assets/images/bg-img3.jpg);">
   <div class="row no-gutters align-items-center">
     <div class="col-lg-6">

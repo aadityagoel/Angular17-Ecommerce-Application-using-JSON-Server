@@ -4,7 +4,8 @@
     <strong>All Product List</strong>
   </div>
   <div class="col-md-2">
-    <button class=" btn btn-dark float-right" type="button" (click)="addProductPopup()" data-bs-toggle="modal" data-bs-target="#addEditProductModal">Add Product</button>
+    <button class=" btn btn-dark float-right" type="button" (click)="addProductPopup()" data-bs-toggle="modal"
+      data-bs-target="#addEditProductModal">Add Product</button>
   </div>
 </div>
 <table class="table table-hover">
@@ -30,13 +31,15 @@
       <!-- <td>{{product_data.productDesc}}</td> -->
       <td>{{product_data.status}}</td>
       <td>
-       <span class="sim-pointer" (click)="editProductPopup(product_data.id)" data-bs-toggle="modal" data-bs-target="#addEditProductModal">Edit</span> &nbsp; &nbsp;  &nbsp;
-       <span class="sim-pointer" (click)="deleteProduct(product_data.id)">Delete</span>
+        <span class="sim-pointer" (click)="editProductPopup(product_data.id)" data-bs-toggle="modal"
+          data-bs-target="#addEditProductModal">Edit</span> &nbsp; &nbsp; &nbsp;
+        <span class="sim-pointer" (click)="deleteProduct(product_data.id)">Delete</span>
       </td>
     </tr>
   </tbody>
 </table>
-<div class="modal fade" id="addEditProductModal" tabindex="-1" role="dialog" aria-labelledby="addEditUserTitle" aria-hidden="true">
+<div class="modal fade" id="addEditProductModal" tabindex="-1" role="dialog" aria-labelledby="addEditUserTitle"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">

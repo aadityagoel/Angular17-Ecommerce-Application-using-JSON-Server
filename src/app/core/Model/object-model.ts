@@ -39,3 +39,11 @@ export class Order{
   contact!:number;
   dateTime!:string;
 }
+export class Contact{
+  id!:number;
+  name!:string
+  email!:string;
+  phone!:string;
+  comment!:string;
+  status!:boolean;
+}

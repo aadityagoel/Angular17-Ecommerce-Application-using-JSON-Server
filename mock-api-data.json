@@ -334,5 +334,79 @@
       "contact": "83685222555",
       "dateTime": "1/27/2024"
     }
+  ],
+  "doctors": [
+    {
+      "id": 1,
+      "name": "Dr. Ashok Khurana",
+      "specialist": "Medicine Specialist",
+      "image_url": "http://localhost:4200/assets/images/team/Dr_Ashok_Khurana.png",
+      "doctor_desc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
+      "cv_pdf": "http://localhost:4200/assets/uploads/CV/Ashok_Khurana-CV.ppt",
+      "status": "publish"
+    },
+    {
+      "id": 2,
+      "name": "Dr. Krishna Gopal",
+      "specialist": "Medicine Specialist",
+      "image_url": "http://localhost:4200/assets/images/team/Dr_Krishna_Gopal.png",
+      "doctor_desc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
+      "cv_pdf": "http://localhost:4200/assets/uploads/CV/Krishna_Gopal-CV.pptx",
+      "status": "publish"
+    },
+    {
+      "id": 3,
+      "name": "Dr. Chinmayee Ratha",
+      "specialist": "Medicine Specialist",
+      "image_url": "http://localhost:4200/assets/images/team/Dr_Chinmayee_Ratha.png",
+      "doctor_desc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
+      "cv_pdf": "http://localhost:4200/assets/uploads/CV/Chinmayee_Ratha-CV.pptx",
+      "status": "publish"
+    },
+    {
+      "id": 4,
+      "name": "Dr. Vandana Bansal",
+      "specialist": "Medicine Specialist",
+      "image_url": "http://localhost:4200/assets/images/team/Dr_Vandana_Bansal.png",
+      "doctor_desc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
+      "cv_pdf": "http://localhost:4200/assets/uploads/CV/Vandana_Bansal-CV.pptx",
+      "status": "publish"
+    },
+    {
+      "id": 5,
+      "name": "Dr. Alok Varshney",
+      "specialist": "Sr. Consultant Radiologist",
+      "image_url": "http://localhost:4200/assets/images/team/Dr_Alok_Varshney.png",
+      "doctor_desc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
+      "cv_pdf": "http://localhost:4200/assets/uploads/CV/Alok_Varshney-CV.pptx",
+      "status": "publish"
+    },
+    {
+      "id": 6,
+      "name": "Dr. Reema Bhatt",
+      "specialist": "Medicine Specialist",
+      "image_url": "http://localhost:4200/assets/images/team/Dr_Reema_Bhatt.png",
+      "doctor_desc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
+      "cv_pdf": "http://localhost:4200/assets/uploads/CV/Reema_Bhatt-CV.pptx",
+      "status": "publish"
+    }
+  ],
+  "contacts": [
+    {
+      "id": 0,
+      "name": "jdfj",
+      "email": "dnjkdd@bdbj.df",
+      "phone": "4164446465",
+      "comment": "dvhibdsdvsjdsjfj",
+      "status": true
+    },
+    {
+      "id": 0,
+      "name": "Aaditya",
+      "email": "aadi@mail.com",
+      "phone": "123123123",
+      "comment": "Test comment",
+      "status": true
+    }
   ]
 }

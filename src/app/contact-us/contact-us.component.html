@@ -1,26 +1,37 @@
-<div class="contact-us">
-  <h1>Love ♥ to hear from You.</h1>
-  <div class="row">
-    <div class="col-md-9">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-      <iframe src="https://maps.app.goo.gl/AJFwvqi6CpwYo5yo6" frameborder="0" width="100%" height="250px" style="border: 0;" allowfullscreen=""></iframe>
+<section id="contactus" class="section-ptb-0 bg-overlay-white-50" data-jarallax='{"speed": 0.0}'
+  style="background-image: url(../../assets/images/bg-img3.jpg);">
+  <div class="row no-gutters align-items-center">
+    <div class="col-lg-6">
+      <div class="p-100 xs-px-15">
+        <div class="section-heading text-left max-width-550">
+          <h1 class="heading">Need a Solution?</h1>
+          <p>For unplanned pregnancy plans Contact Us</p>
+        </div>
+        <form class="mt-30" id="contact" [formGroup]="contactForm">
+          <div class="contact-form clearfix">
+            <div class="form-field">
+              <input type="text" class="form-control" formControlName="ContactName" name="ContactName" id="ContactName" placeholder="Your Name" required>
+            </div>
+            <div class="form-field">
+              <input type="email" class="form-control" formControlName="ContactEmail" name="ContactEmail" id="ContactEmail" placeholder="Your Email" required>
+            </div>
+            <div class="form-field">
+              <input type="text" class="form-control" formControlName="ContactPhone" name="ContactPhone" id="ContactPhone" placeholder="Phone Number" required>
+            </div>
+            <div class="form-field textarea">
+              <textarea class="form-control input-message" formControlName="ContactComment" placeholder="Comment*" rows="7" name="ContactComment" id="ContactComment"></textarea>
+            </div>
+            <div class="form-field submit-button w-100">
+              <button name="submit" (click)="submitContact()" class="cs-button"> Send your message </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="col-md-3">
-      <h3>Postal Address</h3>
-      <p>
-        Address 1
-        Address 2 <br>
-        City
-        State
-        Country <br>
-        Pin Code - 110058
-      </p>
-      <h3>Email</h3>
-      <p><strong>Office:</strong>testycodeiz&#64;gmail.com</p>
-      <p><strong>Personal:</strong>testycodeiz&#64;gmail.com</p>
-      <h3>Phone:</h3>
-      <p><strong>Office:</strong>+91 235865488</p>
-      <p><strong>Personal:</strong>+91 565665323</p>
+    <div class="col-lg-6">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596552044!2d-74.25986763304465!3d40.69714941412697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1537364999769"
+        class="map" style="border:0" allowfullscreen></iframe>
     </div>
   </div>
-</div>
+</section>
