@@ -389,6 +389,15 @@
       "uploadPhoto": "http://localhost:4200/assets/images/team/Dr_Reema_Bhatt.png",
       "cv_pdf": "http://localhost:4200/assets/uploads/CV/Reema_Bhatt-CV.pptx",
       "status": "true"
+    },
+    {
+      "id": "e759",
+      "name": "Test",
+      "specialist": "Specialist",
+      "aboutYou": "Something About You",
+      "uploadPhoto": "C:\\fakepath\\team-7.jpg",
+      "cv_pdf": "C:\\fakepath\\team-7.jpg",
+      "status": "true"
     }
   ],
   "contacts": [
