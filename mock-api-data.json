@@ -337,58 +337,58 @@
   ],
   "doctors": [
     {
-      "id": 1,
       "name": "Dr. Ashok Khurana",
       "specialist": "Medicine Specialist",
-      "image_url": "http://localhost:4200/assets/images/team/Dr_Ashok_Khurana.png",
-      "doctor_desc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
+      "aboutYou": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "uploadPhoto": "http://localhost:4200/assets/images/team/Dr_Ashok_Khurana.png",
       "cv_pdf": "http://localhost:4200/assets/uploads/CV/Ashok_Khurana-CV.ppt",
-      "status": "publish"
+      "status": "True",
+      "id": "41db"
     },
     {
-      "id": 2,
+      "id": "f25f",
       "name": "Dr. Krishna Gopal",
-      "specialist": "Medicine Specialist",
-      "image_url": "http://localhost:4200/assets/images/team/Dr_Krishna_Gopal.png",
-      "doctor_desc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
+      "specialist": "Specialist",
+      "aboutYou": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "uploadPhoto": "http://localhost:4200/assets/images/team/Dr_Krishna_Gopal.png",
       "cv_pdf": "http://localhost:4200/assets/uploads/CV/Krishna_Gopal-CV.pptx",
-      "status": "publish"
+      "status": "True"
     },
     {
-      "id": 3,
+      "id": "40a7",
       "name": "Dr. Chinmayee Ratha",
-      "specialist": "Medicine Specialist",
-      "image_url": "http://localhost:4200/assets/images/team/Dr_Chinmayee_Ratha.png",
-      "doctor_desc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
+      "specialist": "Specialist",
+      "aboutYou": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "uploadPhoto": "http://localhost:4200/assets/images/team/Dr_Chinmayee_Ratha.png",
       "cv_pdf": "http://localhost:4200/assets/uploads/CV/Chinmayee_Ratha-CV.pptx",
-      "status": "publish"
+      "status": "True"
     },
     {
-      "id": 4,
+      "id": "0ed8",
       "name": "Dr. Vandana Bansal",
-      "specialist": "Medicine Specialist",
-      "image_url": "http://localhost:4200/assets/images/team/Dr_Vandana_Bansal.png",
-      "doctor_desc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
+      "specialist": "Specialist",
+      "aboutYou": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "uploadPhoto": "http://localhost:4200/assets/images/team/Dr_Vandana_Bansal.png",
       "cv_pdf": "http://localhost:4200/assets/uploads/CV/Vandana_Bansal-CV.pptx",
-      "status": "publish"
+      "status": "True"
     },
     {
-      "id": 5,
+      "id": "18a7",
       "name": "Dr. Alok Varshney",
       "specialist": "Sr. Consultant Radiologist",
-      "image_url": "http://localhost:4200/assets/images/team/Dr_Alok_Varshney.png",
-      "doctor_desc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
+      "aboutYou": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "uploadPhoto": "http://localhost:4200/assets/images/team/Dr_Alok_Varshney.png",
       "cv_pdf": "http://localhost:4200/assets/uploads/CV/Alok_Varshney-CV.pptx",
-      "status": "publish"
+      "status": "True"
     },
     {
-      "id": 6,
+      "id": "da57",
       "name": "Dr. Reema Bhatt",
-      "specialist": "Medicine Specialist",
-      "image_url": "http://localhost:4200/assets/images/team/Dr_Reema_Bhatt.png",
-      "doctor_desc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
+      "specialist": "Specialist",
+      "aboutYou": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "uploadPhoto": "http://localhost:4200/assets/images/team/Dr_Reema_Bhatt.png",
       "cv_pdf": "http://localhost:4200/assets/uploads/CV/Reema_Bhatt-CV.pptx",
-      "status": "publish"
+      "status": "True"
     }
   ],
   "contacts": [

@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './admin-dashboard.component.css'
 })
 export class AdminDashboardComponent implements OnInit {
+  
 
   user_dashboard_data: any;
   total_user: number = 0;
@@ -24,17 +25,26 @@ export class AdminDashboardComponent implements OnInit {
   inactive_product: number = 0;
   draft_product: number = 0;
 
+  doctor_dashboard_data: any;
+  total_doctor: number = 0;
+  active_doctor: number = 0;
+  inactive_doctor: number = 0;
+
   constructor(private router: Router, private adminService: AdminService) { }
 
   ngOnInit(): void {
     this.adminProductDashboard();
-    this.adminUserDashboardData()
+    this.adminUserDashboardData();
+    this.adminDoctorDashboard();
   }
   userDashboard() {
     this.router.navigateByUrl("/admin/user");
   }
   productDashboard() {
     this.router.navigateByUrl("/admin/product")
+  }
+  doctorDashboard() {
+    this.router.navigateByUrl("/admin/manage-doctor");
   }
   adminUserDashboardData() {
     this.adminService.userDashboardData().subscribe(data => {
@@ -68,6 +78,23 @@ export class AdminDashboardComponent implements OnInit {
           ++this.draft_product
         }
         ++this.total_product;
+      }
+    }, error => {
+      console.log("My error", error)
+    })
+  }
+
+  adminDoctorDashboard() {
+    this.adminService.DoctorDashboardData().subscribe(data => {
+      this.doctor_dashboard_data = data;
+      console.log(this.doctor_dashboard_data)
+      for (let status in this.doctor_dashboard_data) {
+        if (this.doctor_dashboard_data[status].status == 'active') {
+          ++this.active_doctor;
+        } else if (this.doctor_dashboard_data[status].status == 'inactive') {
+          ++this.inactive_doctor;
+        }
+        ++this.total_doctor;
       }
     }, error => {
       console.log("My error", error)

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../../core/service/api.service';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +9,10 @@ import { Observable } from 'rxjs';
 export class AdminService {
   public user_url = "http://localhost:3000/user/";
   public product_url = "http://localhost:3000/products/";
+  public doctor_url = "http://localhost:3000/doctors/";
   public all_user = "http://localhost:3000/user";
 
-  constructor(private apiService:ApiService) { }
+  constructor(private httpClient: HttpClient, private apiService:ApiService) { }
 
   userDashboardData(){
     return this.apiService.get(this.user_url);
@@ -18,6 +20,11 @@ export class AdminService {
   productDashboardData(){
     return this.apiService.get(this.product_url);
   }
+  DoctorDashboardData(){
+    return this.apiService.get(this.doctor_url);
+  }
+
+
   allUser():Observable<any>{
     return this.apiService.get(this.all_user)
   }
@@ -35,5 +42,25 @@ export class AdminService {
   //delete user
   deleteUser(user_id:any){
     return this.apiService.delete(this.user_url+user_id)
+  }
+
+  ///Doctor
+  allDoctor():Observable<any>{
+    return this.apiService.get(this.doctor_url)
+  }
+  addDoctor(doctor_dto:any){
+    return this.httpClient.post(this.doctor_url, doctor_dto);
+  }
+  //get data of individual Doctor
+  singleuDoctor(doctor_id:any){
+    return this.apiService.get(this.doctor_url+doctor_id)
+  }
+  //update data of individual Doctor
+  editDoctor(doctor_id:any, doctor_dto:any):Observable<any>{
+    return this.httpClient.put(this.doctor_url+doctor_id, doctor_dto);
+  }
+  //delete Doctor
+  deleteDoctor(doctor_id:any){
+    return this.apiService.delete(this.doctor_url+doctor_id)
   }
 }
