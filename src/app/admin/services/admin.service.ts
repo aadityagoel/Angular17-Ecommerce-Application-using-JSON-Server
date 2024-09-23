@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import { ApiService } from '../../core/service/api.service';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Constant } from '../../shared/services/constant/constant';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
-  public user_url = "http://localhost:3000/user/";
-  public product_url = "http://localhost:3000/products/";
-  public doctor_url = "http://localhost:3000/doctors/";
-  public all_user = "http://localhost:3000/user";
+  public user_url = Constant.JSON_API_URL + "user/";
+  public product_url = Constant.JSON_API_URL + "products/";
+  public doctor_url = Constant.JSON_API_URL + "doctors/";
+  public all_user = Constant.JSON_API_URL + "user";
 
   constructor(private httpClient: HttpClient, private apiService:ApiService) { }
 

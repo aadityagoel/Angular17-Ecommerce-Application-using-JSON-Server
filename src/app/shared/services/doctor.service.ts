@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../../core/service/api.service';
 import { Observable } from 'rxjs';
+import { Constant } from './constant/constant';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DoctorService {
 
-  public doctor_url = " http://localhost:3000/doctors/"
+  public doctor_url = Constant.JSON_API_URL + "doctors/"
 
   constructor(private httpClient: HttpClient, private apiService: ApiService) { }
 

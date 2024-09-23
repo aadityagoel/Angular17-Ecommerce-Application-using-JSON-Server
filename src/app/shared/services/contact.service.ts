@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiService } from '../../core/service/api.service';
+import { Constant } from './constant/constant';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
-  public contact_url = " http://localhost:3000/contacts/"
+  public contact_url = Constant.JSON_API_URL + "contacts/"
 
   constructor(private httpClient: HttpClient, private apiService: ApiService) { }
   // allcontact():Observable<any>{
