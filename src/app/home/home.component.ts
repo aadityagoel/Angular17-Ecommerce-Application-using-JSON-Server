@@ -16,6 +16,7 @@ import { ContactUsComponent } from "../contact-us/contact-us.component";
 export class HomeComponent implements OnInit {
   all_doctor_data: any;
   topThreeDoctors: any;
+  mobile: string = '+91 73037 23841';
 
   constructor(private fb: FormBuilder, private router: Router, private doctorService: DoctorService) {
   }

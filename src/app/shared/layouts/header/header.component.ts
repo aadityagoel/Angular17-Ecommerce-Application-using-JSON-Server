@@ -13,7 +13,10 @@ import { Router, RouterLink } from '@angular/router';
 export class HeaderComponent implements OnInit {
   logged_in: boolean = false;
   language: string = 'English';
-  user_role!: any;
+  user_role!: any;  
+  email: string = 'airfs0112@gmail.com';
+  mobile: string = '+91 73037 23841';
+  mobiletrim: string = this.mobile.replace(/ +/g,'');
 
   constructor(private router: Router) { }
 

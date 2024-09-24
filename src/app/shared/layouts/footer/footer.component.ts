@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-
+  email: string = 'airfs0112@gmail.com';
+  mobile: string = '+91 73037 23841';
+  mobiletrim: string = this.mobile.replace(/ +/g,'');
 }
