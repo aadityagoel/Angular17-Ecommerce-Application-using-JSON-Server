@@ -3,8 +3,10 @@
         <div class="col-md-10">
             <strong>All Doctors List</strong>
         </div>
-        <div class="col-md-2"><button type="button" class="btn btn-dark float-right" (click)="addDoctorsPopup()"
-                data-bs-toggle="modal" data-bs-target="#addEditDoctorModal">Add New Doctors</button></div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-dark float-right" (click)="addDoctorsPopup()" data-bs-toggle="modal"
+                data-bs-target="#addEditDoctorModal">Add New Doctor</button>
+        </div>
     </div>
     <table class="table table-hover">
         <thead>
@@ -18,10 +20,11 @@
         </thead>
         <tbody>
             <tr *ngFor="let doctor_data of all_doctor_data; let i = index">
-                <th scope="row">{{i+1}}</th>
-                <td>{{doctor_data.name}}</td>
-                <td>{{doctor_data.specialist}}</td>
-                <td>{{doctor_data.status}}</td>
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ doctor_data.name }}</td>
+                <td>{{ doctor_data.specialist }}</td>
+                <td>{{ doctor_data.status ? 'Active' : 'Inactive' }}</td>
+                <td class="d-none">{{ doctor_data.id }}</td>
                 <td>
                     <span class="sim-pointer" (click)="editDoctorPopup(doctor_data.id)" data-bs-toggle="modal"
                         data-bs-target="#addEditDoctorModal">Edit</span>
@@ -33,15 +36,13 @@
     </table>
 </div>
 
-
-
-<!-- Modal for add and edit doctor  -->
+<!-- Modal for add and edit doctor -->
 <div class="modal fade" id="addEditDoctorModal" tabindex="-1" role="dialog" aria-labelledby="addEditDoctorModal"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">{{popup_header}}</h5>
+                <h5 class="modal-title">{{ popup_header }}</h5>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">X</span>
                 </button>
@@ -53,47 +54,54 @@
                             <div class="form-group">
                                 <label>Name</label>
                                 <input type="text" class="form-control" formControlName="name" />
-
                             </div>
                             <div class="form-group">
                                 <label>Specialist</label>
                                 <input type="text" class="form-control" formControlName="specialist" />
-
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Something About You</label>
+                                <label for="aboutYou">Something About You</label>
                                 <textarea class="form-control" rows="3" formControlName="aboutYou"></textarea>
-
                             </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlFile1">Upload Your Photo</label>
-                                <span *ngIf="edit_doctor"><span>Uplload image</span><br>{{upload_file_name}} <span> <a
-                                            href="">Preview</a></span></span>
-                                <input type="file" class="form-control-file" formControlName="uploadPhoto">
 
-                            </div>
+                            <!-- Photo Upload -->
                             <div class="form-group">
-                                <label for="exampleFormControlFile1">Upload Your CV</label>
-                                <span *ngIf="edit_doctor"><span>Uplload CV</span><br>{{upload_cv_file_name}} <span>
-                                        <a href="">Preview</a></span></span>
-                                <input type="file" class="form-control-file" formControlName="cv_pdf">
+                                <label for="uploadPhoto">Upload Your Photo</label>
+                                <span *ngIf="edit_doctor">
+                                    <br /> <span *ngIf="upload_file_name"> <a
+                                            href="{{ server_base_url + upload_file_name }}" target="_blank">Preview</a></span>
+                                </span>
+                                <input type="file" class="form-control-file" (change)="onFileChange($event, 'photo')" />
+                            </div>
 
-                            </div>
+                            <!-- CV Upload -->
                             <div class="form-group">
-                                <label for="exampleFormControlSelect2">Status</label><br>
+                                <label for="cv_pdf">Upload Your CV</label>
+                                <span *ngIf="edit_doctor">
+                                    <br /> <span *ngIf="upload_cv_file_name"> <a
+                                            href="{{ server_base_url + upload_cv_file_name }}" target="_blank">Preview</a></span>
+                                </span>
+                                <input type="file" class="form-control-file" (change)="onFileChange($event, 'cv')" />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Status</label><br />
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" formControlName="status" value="true">
+                                    <input class="form-check-input" type="radio" formControlName="status"
+                                        value="true" />
                                     <label class="form-check-label" for="inlineRadio1">Active</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" formControlName="status" value="false">
-                                    <label class="form-check-label" for="inlineRadio2">In-Active</label>
+                                    <input class="form-check-input" type="radio" formControlName="status"
+                                        value="false" />
+                                    <label class="form-check-label" for="inlineRadio2">Inactive</label>
                                 </div>
                             </div>
+
                             <div class="form-group">
-                                <button class="btn btn-primary" data-bs-dismiss="modal" (click)="addDoctor()"
+                                <button class="btn btn-primary" (click)="addDoctor()"
                                     *ngIf="add_doctor">Register</button>
-                                <button class="btn btn-primary" data-bs-dismiss="modal" (click)="updateDoctor()"
+                                <button class="btn btn-primary" (click)="updateDoctor()"
                                     *ngIf="edit_doctor">Update</button>
                             </div>
                         </form>

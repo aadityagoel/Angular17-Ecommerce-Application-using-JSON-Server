@@ -10,7 +10,7 @@ import { Constant } from '../../shared/services/constant/constant';
 export class AdminService {
   public user_url = Constant.JSON_API_URL + "user/";
   public product_url = Constant.JSON_API_URL + "products/";
-  public doctor_url = Constant.JSON_API_URL + "doctors/";
+  public doctor_url = Constant.JSON_API_URL + "api/doctors";
   public all_user = Constant.JSON_API_URL + "user";
 
   constructor(private httpClient: HttpClient, private apiService:ApiService) { }
@@ -45,23 +45,28 @@ export class AdminService {
     return this.apiService.delete(this.user_url+user_id)
   }
 
-  ///Doctor
-  allDoctor():Observable<any>{
-    return this.apiService.get(this.doctor_url)
+  // Get all doctors
+  allDoctor(): Observable<any> {
+    return this.httpClient.get(this.doctor_url);
   }
-  addDoctor(doctor_dto:any){
+
+  // Add a new doctor
+  addDoctor(doctor_dto: any): Observable<any> {
     return this.httpClient.post(this.doctor_url, doctor_dto);
   }
-  //get data of individual Doctor
-  singleuDoctor(doctor_id:any){
-    return this.apiService.get(this.doctor_url+doctor_id)
+
+  // Get data of a single doctor
+  singleDoctor(doctor_id: any): Observable<any> {
+    return this.httpClient.get(this.doctor_url + "/" + doctor_id);
   }
-  //update data of individual Doctor
-  editDoctor(doctor_id:any, doctor_dto:any):Observable<any>{
-    return this.httpClient.put(this.doctor_url+doctor_id, doctor_dto);
+
+  // Update data of an individual doctor
+  editDoctor(doctor_id: any, doctor_dto: any): Observable<any> {
+    return this.httpClient.put(this.doctor_url + "/" + doctor_id, doctor_dto);
   }
-  //delete Doctor
-  deleteDoctor(doctor_id:any){
-    return this.apiService.delete(this.doctor_url+doctor_id)
+
+  // Delete a doctor
+  deleteDoctor(doctor_id: any): Observable<any> {
+    return this.httpClient.delete(this.doctor_url + "/" + doctor_id);
   }
 }

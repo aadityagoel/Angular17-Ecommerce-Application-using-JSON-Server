@@ -1,0 +1,234 @@
+{
+  "user": [
+    {
+      "name": "Ashish Mishra",
+      "mobNumber": "1234567891",
+      "age": 29,
+      "dob": "1995-05-12",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "address": {
+        "addLine1": "District Center",
+        "addLine2": "Janakpuri",
+        "city": "New Delhi",
+        "state": "Delhi",
+        "zipCode": "110052"
+      },
+      "language": [
+        "English",
+        "Hindi",
+        "Bhojpuri",
+        "Telgu",
+        "Kannad"
+      ],
+      "gender": "Male",
+      "aboutYou": "I am a programmer...",
+      "uploadPhoto": "ashish.png",
+      "agreetc": true,
+      "role": "admin",
+      "id": 1
+    },
+    {
+      "aboutYou": "HGHJBHMBMBNHTRTYRYgfhfjfjh",
+      "age": 29,
+      "agreetc": true,
+      "dob": "2024-01-02",
+      "email": "asdd@gghh.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "876444654",
+        "addLine2": "FFFFHFGHHGFH",
+        "city": "GFHFHFFHG",
+        "state": "...",
+        "zipCode": "86764664646"
+      },
+      "language": [
+        "Hindi"
+      ],
+      "mobNumber": "8446878784466465",
+      "name": "TESTY CODEIZ",
+      "password": "123456789",
+      "uploadPhoto": "C:\\fakepath\\Angular 15 (29).png",
+      "role": "seller",
+      "id": 2
+    },
+    {
+      "aboutYou": "Ashish here , You can learn Angular",
+      "age": 29,
+      "agreetc": true,
+      "dob": "1999-06-07",
+      "email": "ashish@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "new delho",
+        "addLine2": "wx -1520",
+        "city": "delhi",
+        "state": "...",
+        "zipCode": "325863558"
+      },
+      "language": [
+        "English",
+        "Hindi"
+      ],
+      "mobNumber": "83685222555",
+      "name": "Ashish Mishra",
+      "password": "123456789",
+      "uploadPhoto": "C:\\fakepath\\Angular 15 (32).png",
+      "role": "buyer",
+      "id": 3
+    },
+    {
+      "aboutYou": "Something about me..",
+      "age": 31,
+      "agreetc": true,
+      "dob": "1995-12-01",
+      "email": "ashum@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "somthing.",
+        "addLine2": "near about",
+        "city": "delhi",
+        "state": "UP",
+        "zipCode": "2359865"
+      },
+      "language": [
+        "English",
+        "Hindi"
+      ],
+      "mobNumber": "86744645764",
+      "name": "Mr.Ashu",
+      "password": "123456789",
+      "uploadPhoto": "C:\\fakepath\\Angular 17 Admin (6).png",
+      "role": "buyer",
+      "id": 4
+    },
+    {
+      "aboutYou": "Soasdjalkjdljl",
+      "age": 4,
+      "agreetc": true,
+      "dob": "1998-12-02",
+      "email": "test@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "hjhjgkhkljljl",
+        "addLine2": "jljklj",
+        "city": "ljljljljl",
+        "state": "MP",
+        "zipCode": "123456"
+      },
+      "language": [
+        "English",
+        "Hindi"
+      ],
+      "mobNumber": "5564646466464",
+      "name": "Test",
+      "password": "123456789",
+      "uploadPhoto": "C:\\fakepath\\Angular 17 Admin (6).png",
+      "role": "seller",
+      "id": 5
+    },
+    {
+      "aboutYou": "aksdkahkshdkh",
+      "age": 78,
+      "agreetc": true,
+      "dob": "5588-02-05",
+      "email": "abhi@gmail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "46464646",
+        "addLine2": "446",
+        "city": "Uttar Pradesh",
+        "state": "MP",
+        "zipCode": "9865656"
+      },
+      "language": [
+        "English"
+      ],
+      "mobNumber": "877644644464",
+      "name": "abhi",
+      "password": "646464654646",
+      "uploadPhoto": "C:\\fakepath\\Angular 17 Admin (3).png",
+      "role": "buyer",
+      "id": 6
+    }
+  ],
+  "doctors": [
+    {
+      "name": "Dr. Ashok Khurana",
+      "specialist": "Medicine Specialist",
+      "aboutYou": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "uploadPhoto": "/uploads/1728040536997-Dr_Ashok_Khurana.png",
+      "cv_pdf": "/uploads/1728040537017-Ashok_Khurana-CV.ppt",
+      "status": true,
+      "id": "41db"
+    },
+    {
+      "id": "f25f",
+      "name": "Dr. Krishna Gopal",
+      "specialist": "Specialist",
+      "aboutYou": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "uploadPhoto": "/uploads/1728040595080-Dr_Krishna_Gopal.png",
+      "cv_pdf": "/uploads/1728040595091-Krishna_Gopal-CV.pptx",
+      "status": true
+    },
+    {
+      "id": "40a7",
+      "name": "Dr. Chinmayee Ratha",
+      "specialist": "Specialist",
+      "aboutYou": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "uploadPhoto": "/uploads/1728040644468-Dr_Chinmayee_Ratha.png",
+      "cv_pdf": "/uploads/1728040644477-Chinmayee_Ratha-CV.pptx",
+      "status": true
+    },
+    {
+      "id": "0ed8",
+      "name": "Dr. Vandana Bansal",
+      "specialist": "Specialist",
+      "aboutYou": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "uploadPhoto": "/uploads/1728040712221-Dr_Vandana_Bansal.png",
+      "cv_pdf": "/uploads/1728040712240-Vandana_Bansal-CV.pptx",
+      "status": true
+    },
+    {
+      "id": "18a7",
+      "name": "Dr. Alok Varshney",
+      "specialist": "Sr. Consultant Radiologist",
+      "aboutYou": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "uploadPhoto": "/uploads/1728040770562-Dr_Alok_Varshney.png",
+      "cv_pdf": "/uploads/1728040770568-Alok_Varshney-CV.pptx",
+      "status": true
+    },
+    {
+      "id": "da57",
+      "name": "Dr. Reema Bhatt",
+      "specialist": "Specialist",
+      "aboutYou": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "uploadPhoto": "/uploads/1728040802708-Dr_Reema_Bhatt.png",
+      "cv_pdf": "/uploads/1728040802733-Reema_Bhatt-CV.pptx",
+      "status": true
+    }
+  ],
+  "contacts": [
+    {
+      "id": 0,
+      "name": "jdfj",
+      "email": "dnjkdd@bdbj.df",
+      "phone": "4164446465",
+      "comment": "dvhibdsdvsjdsjfj",
+      "status": true
+    },
+    {
+      "id": 0,
+      "name": "Aaditya",
+      "email": "aadi@mail.com",
+      "phone": "123123123",
+      "comment": "Test comment",
+      "status": true
+    }
+  ]
+}

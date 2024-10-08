@@ -1,8 +1,17 @@
 export const Constant = {
   // API_END_POINT: 'https://freeapi.gerasim.in/api/BigBasket/',
   // API_END_POINT_USER: 'http://freeapi.gerasim.in/api/User/',
+
+  /// Live
   APP_URL: 'https://apex-institute-of-fetal-and-reproductive.onrender.com/',
   JSON_API_URL: 'https://aifrs-json-server.onrender.com/',
+  JSON_API_URL_without_Slash: 'https://aifrs-json-server.onrender.com',
+
+  ///local
+  // APP_URL: 'http://localhost:4200/',
+  // JSON_API_URL: 'http://localhost:3000/',
+  // JSON_API_URL_without_Slash: 'http://localhost:3000',
+
   // METHODS: {
   //   GET_ALL_PRODUCT: 'GetAllProducts',
   //   GET_PRODUCT_BY_ID: 'GetProductById?id=',

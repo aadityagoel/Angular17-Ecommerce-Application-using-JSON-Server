@@ -424,7 +424,7 @@
           <div class="col-md-4 col-12 mb-30 xs-mb-30" *ngFor="let doctor_data of topThreeDoctors; let i = index">
               <div class="team team-hover team-shadow">
                   <div class="team-photo">
-                      <img class=" mx-auto" width="350px" height="350px" src="{{doctor_data.uploadPhoto}}" alt="">
+                      <img class=" mx-auto" width="350px" height="350px" src="{{server_base_url + doctor_data.uploadPhoto}}" alt="">
                   </div>
                   <div class="team-description">
                       <div class="team-info">
@@ -434,7 +434,7 @@
                           <p class="fs-16 mb-10"> {{doctor_data.specialist}} </p>
                       </div>
                       <div class="team-contact">
-                          <a class="fs-16 mb-10 cs-button medium" href="{{doctor_data.cv_pdf}}">View CV</a>
+                          <a class="fs-16 mb-10 cs-button medium" href="{{server_base_url + doctor_data.cv_pdf}}">View CV</a>
                       </div>
                       <div class="social-icons social-border rounded color-hover clearfix">
                           <ul>

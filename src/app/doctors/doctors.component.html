@@ -5,40 +5,55 @@
                 <div class="section-heading text-center max-width-550 mx-auto">
                     <h1 class="heading">Our Specialised Team</h1>
                     <p>Meet our esteemed faculty, comprised of leading experts in the field of Fetal Medicine, dedicated
-                        to
-                        guiding you towards excellence in prenatal care.</p>
+                        to guiding you towards excellence in prenatal care.</p>
                 </div>
             </div>
         </div>
+
         <div class="row mt-50">
+            <!-- Loop through all doctor data -->
             <div class="col-md-4 col-12 mb-30 xs-mb-30" *ngFor="let doctor_data of all_doctor_data; let i = index">
                 <div class="team team-hover team-shadow">
+                    <!-- Team Photo -->
                     <div class="team-photo">
-                        <img class=" mx-auto" width="350px" height="350px" src="{{doctor_data.uploadPhoto}}" alt="">
+                        <img 
+                            class="mx-auto" 
+                            width="350px" 
+                            height="350px" 
+                            [src]="server_base_url + doctor_data.uploadPhoto || 'assets/default-image.jpg'"  
+                            [alt]="doctor_data.name ? doctor_data.name : 'Doctor Image'"  
+                        >
                     </div>
+                    <!-- Team Description -->
                     <div class="team-description">
                         <div class="team-info">
-                            <h4><a href="#"> {{doctor_data.name}}</a></h4>
+                            <h4><a href="#"> {{ doctor_data.name }} </a></h4>
                         </div>
                         <div class="team-contact">
-                            <p class="fs-16 mb-10"> {{doctor_data.specialist}} </p>
+                            <p class="fs-16 mb-10"> {{ doctor_data.specialist }} </p>
                         </div>
-                        <div class="team-contact">
-                            <a class="fs-16 mb-10 cs-button medium" href="{{doctor_data.cv_pdf}}">View CV</a>
+                        <!-- View CV Button -->
+                        <div class="team-contact" *ngIf="doctor_data.cv_pdf">
+                            <a class="fs-16 mb-10 cs-button medium" href="{{ server_base_url + doctor_data.cv_pdf }}" target="_blank">
+                                View CV
+                            </a>
                         </div>
+                        <!-- Social Icons -->
                         <div class="social-icons social-border rounded color-hover clearfix">
                             <ul>
-                                <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li class="social-instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li class="social-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li class="social-instagram"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                                <li class="social-linkedin"><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="mt-30 mt-30 text-center d-none">
+
+        <!-- View All Button (currently hidden) -->
+        <div class="mt-30 text-center d-none">
             <a class="cs-button medium" href="#">View All</a>
         </div>
     </div>
