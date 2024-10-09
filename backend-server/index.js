@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors({
-    origin: 'http://localhost:4200',  // Only allow this origin
+    origin: 'https://aifrs-backend-server.onrender.com',  // Only allow this origin
     methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allowed HTTP methods
     allowedHeaders: ['Content-Type', 'Authorization']  // Allowed headers
 }));

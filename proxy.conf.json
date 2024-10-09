@@ -1,6 +1,6 @@
 {
     "/api": {
-      "target": "https://aifrs-json-server.onrender.com/",
+      "target": "https://aifrs-backend-server.onrender.com",
       "secure": false,
       "changeOrigin": true,
       "logLevel": "debug"
