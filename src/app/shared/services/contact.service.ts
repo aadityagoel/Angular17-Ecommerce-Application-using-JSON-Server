@@ -8,7 +8,7 @@ import { Constant } from './constant/constant';
   providedIn: 'root'
 })
 export class ContactService {
-  public contact_url = Constant.JSON_API_URL + "contacts/"
+  public contact_url = Constant.JSON_API_URL + "/contacts/"
 
   constructor(private httpClient: HttpClient, private apiService: ApiService) { }
   // allcontact():Observable<any>{

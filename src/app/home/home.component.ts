@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   all_doctor_data: any;
   topThreeDoctors: any;
   mobile: string = '+91 73037 23841';
-  server_base_url: any = Constant.JSON_API_URL_without_Slash;
+  server_base_url: any = Constant.JSON_API_URL;
 
   constructor(private fb: FormBuilder, private router: Router, private doctorService: DoctorService) {
   }

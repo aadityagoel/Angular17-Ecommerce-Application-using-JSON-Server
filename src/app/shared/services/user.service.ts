@@ -9,7 +9,7 @@ import { Constant } from './constant/constant';
 })
 export class UserService {
 
-  public user_url = Constant.JSON_API_URL + "user/";
+  public user_url = Constant.JSON_API_URL + "/user/";
 
   constructor(private http: HttpClient, private apiService: ApiService) { }
 

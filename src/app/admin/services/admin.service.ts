@@ -8,10 +8,10 @@ import { Constant } from '../../shared/services/constant/constant';
   providedIn: 'root'
 })
 export class AdminService {
-  public user_url = Constant.JSON_API_URL + "user/";
-  public product_url = Constant.JSON_API_URL + "products/";
-  public doctor_url = Constant.JSON_API_URL + "api/doctors";
-  public all_user = Constant.JSON_API_URL + "user";
+  public user_url = Constant.JSON_API_URL + "/user/";
+  public product_url = Constant.JSON_API_URL + "/products/";
+  public doctor_url = Constant.JSON_API_URL + "/api/doctors";
+  public all_user = Constant.JSON_API_URL + "/user";
 
   constructor(private httpClient: HttpClient, private apiService:ApiService) { }
 

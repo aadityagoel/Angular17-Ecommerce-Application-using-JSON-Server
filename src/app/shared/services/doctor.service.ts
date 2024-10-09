@@ -9,7 +9,7 @@ import { Constant } from './constant/constant';
 })
 export class DoctorService {
 
-  public doctor_url = Constant.JSON_API_URL + "api/doctors"
+  public doctor_url = Constant.JSON_API_URL + "/api/doctors"
 
   constructor(private httpClient: HttpClient, private apiService: ApiService) { }
 

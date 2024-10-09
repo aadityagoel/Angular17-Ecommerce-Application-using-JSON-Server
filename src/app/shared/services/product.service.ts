@@ -8,7 +8,7 @@ import { Constant } from './constant/constant';
   providedIn: 'root'
 })
 export class ProductService {
-  public product_url = Constant.JSON_API_URL + "products/"
+  public product_url = Constant.JSON_API_URL + "/products/"
 
   constructor(private httpClient: HttpClient, private apiService: ApiService) { }
   allProduct(): Observable<any> {

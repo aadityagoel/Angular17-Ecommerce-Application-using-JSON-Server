@@ -30,7 +30,7 @@ export class ManageDoctorComponent implements OnInit {
   popup_header!: string;
   selectedFilePhoto: File | null = null;
   selectedFileCV: File | null = null;
-  server_base_url: any = Constant.JSON_API_URL_without_Slash;
+  server_base_url: any = Constant.JSON_API_URL;
 
   constructor(
     private formBuilder: FormBuilder,

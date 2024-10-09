@@ -14,7 +14,7 @@ import { Constant } from '../shared/services/constant/constant';
 })
 export class DoctorsComponent implements OnInit {
   all_doctor_data: any;   // Holds the data of all doctors
-  server_base_url: any = Constant.JSON_API_URL_without_Slash;
+  server_base_url: any = Constant.JSON_API_URL;
   constructor(private router: Router, private doctorService: DoctorService) { }
 
   ngOnInit(): void {
