@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './admin-dashboard.component.css'
 })
 export class AdminDashboardComponent implements OnInit {
-  
+
 
   user_dashboard_data: any;
   total_user: number = 0;
@@ -30,12 +30,18 @@ export class AdminDashboardComponent implements OnInit {
   active_doctor: number = 0;
   inactive_doctor: number = 0;
 
+  contact_dashboard_data: any;
+  total_contact: number = 0;
+  active_contact: number = 0;
+  inactive_contact: number = 0;
+
   constructor(private router: Router, private adminService: AdminService) { }
 
   ngOnInit(): void {
     this.adminProductDashboard();
     this.adminUserDashboardData();
     this.adminDoctorDashboard();
+    this.adminContactDashboard();
   }
   userDashboard() {
     this.router.navigateByUrl("/admin/user");
@@ -46,6 +52,10 @@ export class AdminDashboardComponent implements OnInit {
   doctorDashboard() {
     this.router.navigateByUrl("/admin/manage-doctor");
   }
+  contactDashboard() {
+    this.router.navigateByUrl("/admin/manage-contact");
+  }
+
   adminUserDashboardData() {
     this.adminService.userDashboardData().subscribe(data => {
       this.user_dashboard_data = data;
@@ -89,12 +99,29 @@ export class AdminDashboardComponent implements OnInit {
       this.doctor_dashboard_data = data;
       console.log(this.doctor_dashboard_data)
       for (let status in this.doctor_dashboard_data) {
-        if (this.doctor_dashboard_data[status].status == 'active') {
+        if (this.doctor_dashboard_data[status].status == true) {
           ++this.active_doctor;
-        } else if (this.doctor_dashboard_data[status].status == 'inactive') {
+        } else if (this.doctor_dashboard_data[status].status == false) {
           ++this.inactive_doctor;
         }
         ++this.total_doctor;
+      }
+    }, error => {
+      console.log("My error", error)
+    })
+  }
+
+  adminContactDashboard() {
+    this.adminService.contactDashboardData().subscribe(data => {
+      this.contact_dashboard_data = data;
+      console.log(this.contact_dashboard_data)
+      for (let status in this.contact_dashboard_data) {
+        if (this.contact_dashboard_data[status].status == true) {
+          ++this.active_contact;
+        } else if (this.contact_dashboard_data[status].status == false) {
+          ++this.inactive_contact;
+        }
+        ++this.total_contact;
       }
     }, error => {
       console.log("My error", error)

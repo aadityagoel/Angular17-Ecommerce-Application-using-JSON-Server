@@ -155,6 +155,29 @@
       "uploadPhoto": "C:\\fakepath\\Angular 17 Admin (3).png",
       "role": "buyer",
       "id": 6
+    },
+    {
+      "aboutYou": "Something About You",
+      "age": 25,
+      "dob": "2000-02-18",
+      "email": "adi@mail.com",
+      "gender": "Male",
+      "address": {
+        "id": 0,
+        "addLine1": "testt",
+        "addLine2": "testst",
+        "city": "tesstt",
+        "state": "...",
+        "zipCode": "133123"
+      },
+      "language": [
+        "Hindi"
+      ],
+      "mobNumber": "1231231231",
+      "name": "Aaditya",
+      "password": "123123",
+      "uploadPhoto": "C:\\fakepath\\IMG_20241005_165124.jpg",
+      "id": 7
     }
   ],
   "doctors": [
@@ -229,6 +252,14 @@
       "phone": "123123123",
       "comment": "Test comment",
       "status": true
+    },
+    {
+      "id": 1728486745667,
+      "name": "Tesstt",
+      "email": "Testt@testt.cjc",
+      "phone": "7894994444",
+      "comment": "Testtee",
+      "status": false
     }
   ]
 }

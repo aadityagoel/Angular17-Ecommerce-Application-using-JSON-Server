@@ -1,29 +1,60 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiService } from '../../core/service/api.service';
+import { catchError } from 'rxjs/operators';
 import { Constant } from './constant/constant';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
-  public contact_url = Constant.JSON_API_URL + "/contacts/"
+  private contact_url = Constant.JSON_API_URL + "/api/contacts";
 
-  constructor(private httpClient: HttpClient, private apiService: ApiService) { }
-  // allcontact():Observable<any>{
-  //   return this.apiService.get(this.contact_url);
-  // }
+  constructor(private httpClient: HttpClient) { }
+
+  // Add new contact
   addContactDetail(contact_dto: any): Observable<any> {
-    return this.httpClient.post(this.contact_url, contact_dto);
+    return this.httpClient.post(this.contact_url, contact_dto)
+      .pipe(
+        catchError(this.handleError)
+      );
   }
-  // singlecontact(id:any){
-  //   return this.apiService.get(this.contact_url+id);
-  // }
-  // updatecontact(id:any, contact_dto:any):Observable<any>{
-  //   return this.apiService.put(this.contact_url+id, contact_dto);
-  // }
-  // deletecontact(id:any):Observable<any>{
-  //   return this.apiService.delete(this.contact_url+id);
-  // }
+
+  // Get all contacts
+  allContacts(): Observable<any> {
+    return this.httpClient.get(this.contact_url)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  // Get a single contact by ID
+  singleContact(id: any): Observable<any> {
+    return this.httpClient.get(`${this.contact_url}/${id}`)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  // Update a contact by ID
+  updateContact(id: any, contact_dto: any): Observable<any> {
+    return this.httpClient.put(`${this.contact_url}/${id}`, contact_dto)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  // Delete a contact by ID
+  deleteContact(id: any): Observable<any> {
+    return this.httpClient.delete(`${this.contact_url}/${id}`)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  // Error handling
+  private handleError(error: any): Observable<never> {
+    console.error("Error in ContactService:", error);
+    throw error;
+  }
 }

@@ -1,0 +1,101 @@
+<div class="container my-30">
+    <div class="row">
+        <div class="col-md-10">
+            <strong>All Contacts List</strong>
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-dark float-right" (click)="addContactPopup()" data-bs-toggle="modal"
+                data-bs-target="#addEditContactModal">Add New Contact</button>
+        </div>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Comment</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contact_data of all_contact_data; let i = index">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ contact_data.name }}</td>
+                <td>{{ contact_data.email }}</td>
+                <td>{{ contact_data.phone }}</td>
+                <td>{{ contact_data.comment }}</td>
+                <td>{{ contact_data.status ? 'Active' : 'Inactive' }}</td>
+                <td class="d-none">{{ contact_data.id }}</td>
+                <td>
+                    <span class="sim-pointer" (click)="editContactPopup(contact_data.id)" data-bs-toggle="modal"
+                        data-bs-target="#addEditContactModal">Edit</span>
+                    &nbsp;&nbsp;&nbsp;
+                    <span class="sim-pointer" (click)="deleteContact(contact_data.id)">Del</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal for add and edit contact -->
+<div class="modal fade" id="addEditContactModal" tabindex="-1" role="dialog" aria-labelledby="addEditContactModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ popup_header }}</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">X</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <form [formGroup]="addEditContactForm">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" formControlName="name" />
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" formControlName="email" />
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="text" class="form-control" formControlName="phone" />
+                            </div>
+                            <div class="form-group">
+                                <label for="comment">Comment</label>
+                                <textarea class="form-control" rows="3" formControlName="comment"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Status</label><br />
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" formControlName="status"
+                                        value="true" />
+                                    <label class="form-check-label" for="inlineRadio1">Active</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" formControlName="status"
+                                        value="false" />
+                                    <label class="form-check-label" for="inlineRadio2">Inactive</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <button class="btn btn-primary" (click)="addContact()"
+                                    *ngIf="add_contact">Register</button>
+                                <button class="btn btn-primary" (click)="updateContact()"
+                                    *ngIf="edit_contact">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

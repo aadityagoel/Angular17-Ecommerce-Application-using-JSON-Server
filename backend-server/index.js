@@ -15,7 +15,7 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization']  // Allowed headers
 }));
 
-// JSON Server setup for managing doctor data in db.json
+// JSON Server setup for managing doctor and contact data in db.json
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
 
@@ -32,6 +32,9 @@ const upload = multer({ storage });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve uploaded files
+
+// #region DOCTOR ROUTES
+/****************** DOCTOR ROUTES ******************/
 
 // Route to get all doctors
 app.get('/api/doctors', (req, res) => {
@@ -115,6 +118,95 @@ app.delete('/api/doctors/:id', (req, res) => {
     fs.writeFileSync(dbPath, JSON.stringify(dbData, null, 2));
     res.json({ message: 'Doctor deleted successfully' });
 });
+// #endregion 
+
+// #region CONTACT ROUTES
+/****************** CONTACT ROUTES ******************/
+
+// Route to get all contacts
+app.get('/api/contacts', (req, res) => {
+    const dbPath = path.join(__dirname, 'db.json');
+    const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+    res.json(dbData.contacts);
+});
+
+// Route to get a single contact by ID
+app.get('/api/contacts/:id', (req, res) => {
+    const dbPath = path.join(__dirname, 'db.json');
+    const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+    const contact = dbData.contacts.find(c => c.id == req.params.id);
+    if (contact) {
+        res.json(contact);
+    } else {
+        res.status(404).json({ message: 'Contact not found' });
+    }
+});
+
+// Route to add a new contact
+app.post('/api/contacts', (req, res) => {
+    const dbPath = path.join(__dirname, 'db.json');
+    const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+
+    const newContact = {
+        id: Date.now(),
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        comment: req.body.comment,
+        status: req.body.status === 'true'
+    };
+
+    dbData.contacts.push(newContact);
+
+    fs.writeFileSync(dbPath, JSON.stringify(dbData, null, 2));
+    res.status(201).json(newContact);
+});
+
+// Route to update an existing contact by ID
+app.put('/api/contacts/:id', (req, res) => {
+    const dbPath = path.join(__dirname, 'db.json');
+    const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+
+    const contactIndex = dbData.contacts.findIndex(c => c.id == req.params.id);
+    if (contactIndex !== -1) {
+        const existingContact = dbData.contacts[contactIndex];
+
+        const updatedContact = {
+            ...existingContact,
+            name: req.body.name || existingContact.name,
+            email: req.body.email || existingContact.email,
+            phone: req.body.phone || existingContact.phone,
+            comment: req.body.comment || existingContact.comment,
+            status: req.body.status === 'true'
+        };
+
+        dbData.contacts[contactIndex] = updatedContact;
+        fs.writeFileSync(dbPath, JSON.stringify(dbData, null, 2));
+        res.json(updatedContact);
+    } else {
+        res.status(404).json({ message: 'Contact not found' });
+    }
+});
+
+// Route to delete a contact by ID
+app.delete('/api/contacts/:id', (req, res) => {
+    const dbPath = path.join(__dirname, 'db.json');
+    const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+
+    const updatedContacts = dbData.contacts.filter(c => c.id != req.params.id);
+
+    if (updatedContacts.length === dbData.contacts.length) {
+        return res.status(404).json({ message: 'Contact not found' });
+    }
+
+    dbData.contacts = updatedContacts;
+    fs.writeFileSync(dbPath, JSON.stringify(dbData, null, 2));
+    res.json({ message: 'Contact deleted successfully' });
+});
+
+// #endregion 
+
+/****************** USE JSON SERVER ******************/
 
 // Use JSON Server for handling other CRUD operations
 app.use(middlewares);

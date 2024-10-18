@@ -9,8 +9,8 @@ import { Constant } from './constant/constant';
 })
 export class LoginSignupService {
 
-  public login_url = Constant.JSON_API_URL;
-  public reg_url = Constant.JSON_API_URL;
+  public login_url = Constant.JSON_API_URL + '/api';
+  public reg_url = Constant.JSON_API_URL + '/api';
 
   constructor(private http: HttpClient, private apiService: ApiService) { }
   authLogin(user_name: any, password: any): Observable<any> {
@@ -18,7 +18,7 @@ export class LoginSignupService {
   }
 
   userRegister(user_dto: any): Observable<any> {
-    return this.apiService.post(this.reg_url + '/user', user_dto)
+    return this.http.post(this.reg_url + '/user', user_dto)
   }
 
   adminLogin(user_name: any, password: any): Observable<any> {

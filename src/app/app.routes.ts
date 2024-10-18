@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './shared/layouts/page-not-found/page-not-
 import { AdminAuthGuardLogin, AdminAuthGaurdService, BuyerAuthGaurdService, SellerAuthGaurdService, SellerBuyerAuthGuardLogin } from './shared/services/auth-guard.service';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { ManageDoctorComponent } from './admin/manage-doctor/manage-doctor.component';
+import { ManageContactComponent } from './admin/manage-contact/manage-contact.component';
 
 export const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
@@ -32,7 +33,8 @@ export const routes: Routes = [
       { path: "admin-dashboard", component: AdminDashboardComponent },
       { path: "admin/user", component: UserCrudComponent },
       { path: "admin/product", component: ProductComponent },
-      { path: "admin/manage-doctor", component: ManageDoctorComponent }
+      { path: "admin/manage-doctor", component: ManageDoctorComponent },
+      { path: "admin/manage-contact", component: ManageContactComponent }
     ]
   },
   {

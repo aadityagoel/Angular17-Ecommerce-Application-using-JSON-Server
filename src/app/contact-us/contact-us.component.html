@@ -7,27 +7,65 @@
           <h1 class="heading">Need a Solution?</h1>
           <p>For unplanned pregnancy plans Contact Us</p>
         </div>
-        <form class="mt-30" id="contact" [formGroup]="contactForm">
+
+        <!-- Contact Form -->
+        <form class="mt-30" id="contact" [formGroup]="contactForm" (ngSubmit)="submitContact()">
           <div class="contact-form clearfix">
+            <!-- Name Field -->
             <div class="form-field">
-              <input type="text" class="form-control" formControlName="ContactName" name="ContactName" id="ContactName" placeholder="Your Name" required>
+              <label for="ContactName" class="sr-only">Your Name</label>
+              <input type="text" class="form-control" formControlName="ContactName" name="ContactName" id="ContactName"
+                placeholder="Your Name" required>
+              <!-- Error Message for Name -->
+              <div *ngIf="rf['ContactName'].invalid && rf['ContactName'].touched" class="text-danger">
+                Your name is required.
+              </div>
             </div>
+
+            <!-- Email Field -->
             <div class="form-field">
-              <input type="email" class="form-control" formControlName="ContactEmail" name="ContactEmail" id="ContactEmail" placeholder="Your Email" required>
+              <label for="ContactEmail" class="sr-only">Your Email</label>
+              <input type="email" class="form-control" formControlName="ContactEmail" name="ContactEmail"
+                id="ContactEmail" placeholder="Your Email" required>
+              <!-- Error Message for Email -->
+              <div *ngIf="rf['ContactEmail'].invalid && rf['ContactEmail'].touched" class="text-danger">
+                A valid email is required.
+              </div>
             </div>
+
+            <!-- Phone Number Field -->
             <div class="form-field">
-              <input type="text" class="form-control" formControlName="ContactPhone" name="ContactPhone" id="ContactPhone" placeholder="Phone Number" required>
+              <label for="ContactPhone" class="sr-only">Phone Number</label>
+              <input type="text" class="form-control" formControlName="ContactPhone" name="ContactPhone"
+                id="ContactPhone" placeholder="Phone Number" required>
+              <!-- Error Message for Phone -->
+              <div *ngIf="rf['ContactPhone'].invalid && rf['ContactPhone'].touched" class="text-danger">
+                A valid phone number is required (10 digits).
+              </div>
             </div>
+
+            <!-- Comment Field -->
             <div class="form-field textarea">
-              <textarea class="form-control input-message" formControlName="ContactComment" placeholder="Comment*" rows="7" name="ContactComment" id="ContactComment"></textarea>
+              <label for="ContactComment" class="sr-only">Comment</label>
+              <textarea class="form-control input-message" formControlName="ContactComment" placeholder="Comment*"
+                rows="7" name="ContactComment" id="ContactComment"></textarea>
+              <!-- Error Message for Comment -->
+              <div *ngIf="rf['ContactComment'].invalid && rf['ContactComment'].touched" class="text-danger">
+                Comment is required.
+              </div>
             </div>
+
+            <!-- Submit Button -->
             <div class="form-field submit-button w-100">
-              <button name="submit" (click)="submitContact()" class="cs-button"> Send your message </button>
+              <button name="submit" type="submit" class="cs-button" [disabled]="contactForm.invalid">Send your
+                message</button>
             </div>
           </div>
         </form>
       </div>
     </div>
+
+    <!-- Google Map Section -->
     <div class="col-lg-6">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596552044!2d-74.25986763304465!3d40.69714941412697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1537364999769"
