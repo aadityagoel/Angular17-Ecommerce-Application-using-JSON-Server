@@ -79,9 +79,9 @@ export class UserProfileComponent implements OnInit{
   }
   updateProfile(){
     this.userProfile = true;
-    if(this.userProfileForm.invalid){
-      return;
-    }
+    // if(this.userProfileForm.invalid){
+    //   return;
+    // }
     this.user_update_data = this.userProfileForm.value;
     this.user_dto ={
       aboutYou:this.user_update_data.aboutYou,

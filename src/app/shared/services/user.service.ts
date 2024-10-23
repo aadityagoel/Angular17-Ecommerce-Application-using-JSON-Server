@@ -9,7 +9,7 @@ import { Constant } from './constant/constant';
 })
 export class UserService {
 
-  public user_url = Constant.JSON_API_URL + "/user/";
+  public user_url = Constant.JSON_API_URL + "/api/users/";
 
   constructor(private http: HttpClient, private apiService: ApiService) { }
 
@@ -19,6 +19,6 @@ export class UserService {
   }
   //update data by user_id
   updateUserData(user_id: any, user_dto: any): Observable<any> {
-    return this.apiService.put(this.user_url + user_id, user_dto);
+    return this.http.put(this.user_url + user_id, user_dto);
   }
 }

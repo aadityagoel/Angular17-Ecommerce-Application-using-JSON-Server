@@ -8,12 +8,12 @@ import { Contact, User, Doctor } from '../../core/Model/object-model';
   providedIn: 'root'
 })
 export class AdminService {
-  private user_url = `${Constant.JSON_API_URL}/api/user`;
+  private user_url = `${Constant.JSON_API_URL}/api/users`;
   private product_url = `${Constant.JSON_API_URL}/api/products`;
   private doctor_url = `${Constant.JSON_API_URL}/api/doctors`;
   private contact_url = `${Constant.JSON_API_URL}/api/contacts`;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   //#region Dashboard
   // Fetch data for user dashboard
@@ -44,8 +44,8 @@ export class AdminService {
   }
 
   // Add a new user
-  addUser(user_dto: User): Observable<User> {
-    return this.httpClient.post<User>(this.user_url, user_dto);
+  addUser(user_dto: any): Observable<any>  {
+    return this.httpClient.post(this.user_url, user_dto);
   }
 
   // Get a single user by ID
@@ -54,8 +54,8 @@ export class AdminService {
   }
 
   // Update an existing user
-  editUser(user_id: any, user_dto: User): Observable<User> {
-    return this.httpClient.put<User>(`${this.user_url}/${user_id}`, user_dto);
+  editUser(user_id: any, user_dto: any): Observable<any> {
+    return this.httpClient.put(`${this.user_url}/${user_id}`, user_dto);
   }
 
   // Delete a user by ID
@@ -66,23 +66,23 @@ export class AdminService {
 
   //#region Doctor CRUD
   // Get all doctors
-  allDoctor(): Observable<Doctor[]> {
-    return this.httpClient.get<Doctor[]>(this.doctor_url);
+  allDoctor(): Observable<any> {
+    return this.httpClient.get(this.doctor_url);
   }
 
   // Add a new doctor
-  addDoctor(doctor_dto: Doctor): Observable<Doctor> {
-    return this.httpClient.post<Doctor>(this.doctor_url, doctor_dto);
+  addDoctor(doctor_dto: any): Observable<any> {
+    return this.httpClient.post(this.doctor_url, doctor_dto);
   }
 
   // Get a single doctor by ID
-  singleDoctor(doctor_id: any): Observable<Doctor> {
-    return this.httpClient.get<Doctor>(`${this.doctor_url}/${doctor_id}`);
+  singleDoctor(doctor_id: any): Observable<any> {
+    return this.httpClient.get(`${this.doctor_url}/${doctor_id}`);
   }
 
   // Update an existing doctor
-  editDoctor(doctor_id: any, doctor_dto: Doctor): Observable<Doctor> {
-    return this.httpClient.put<Doctor>(`${this.doctor_url}/${doctor_id}`, doctor_dto);
+  editDoctor(doctor_id: any, doctor_dto: any): Observable<any> {
+    return this.httpClient.put(`${this.doctor_url}/${doctor_id}`, doctor_dto);
   }
 
   // Delete a doctor by ID

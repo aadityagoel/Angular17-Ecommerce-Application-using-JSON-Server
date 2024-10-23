@@ -1,43 +1,47 @@
 <br>
-<div class="row">
-  <div class="col-md-10">
-    <strong>All Product List</strong>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <strong>All Product List</strong>
+    </div>
+    <div class="col-md-2">
+      <button class=" btn btn-dark float-right" type="button" (click)="addProductPopup()" data-bs-toggle="modal"
+        data-bs-target="#addEditProductModal">Add Product</button>
+    </div>
   </div>
-  <div class="col-md-2">
-    <button class=" btn btn-dark float-right" type="button" (click)="addProductPopup()" data-bs-toggle="modal"
-      data-bs-target="#addEditProductModal">Add Product</button>
-  </div>
+  <br>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Product name</th>
+        <!-- <th scope="col">Display Image</th> -->
+        <th scope="col">MRP</th>
+        <th scope="col">DP</th>
+        <!-- <th scope="col">Description</th> -->
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product_data of all_product_data; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{product_data.name}}</td>
+        <!-- <td>{{product_data.uploadPhoto}}</td> -->
+        <td>{{product_data.mrp}}</td>
+        <td>{{product_data.dp}}</td>
+        <!-- <td>{{product_data.productDesc}}</td> -->
+        <td>{{product_data.status}}</td>
+        <td>
+          <span class="sim-pointer" (click)="editProductPopup(product_data.id)" data-bs-toggle="modal"
+            data-bs-target="#addEditProductModal">Edit</span> &nbsp; &nbsp; &nbsp;
+          <span class="sim-pointer" (click)="deleteProduct(product_data.id)">Delete</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Product name</th>
-      <!-- <th scope="col">Display Image</th> -->
-      <th scope="col">MRP</th>
-      <th scope="col">DP</th>
-      <!-- <th scope="col">Description</th> -->
-      <th scope="col">Status</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let product_data of all_product_data; let i = index">
-      <th scope="row">{{i+1}}</th>
-      <td>{{product_data.name}}</td>
-      <!-- <td>{{product_data.uploadPhoto}}</td> -->
-      <td>{{product_data.mrp}}</td>
-      <td>{{product_data.dp}}</td>
-      <!-- <td>{{product_data.productDesc}}</td> -->
-      <td>{{product_data.status}}</td>
-      <td>
-        <span class="sim-pointer" (click)="editProductPopup(product_data.id)" data-bs-toggle="modal"
-          data-bs-target="#addEditProductModal">Edit</span> &nbsp; &nbsp; &nbsp;
-        <span class="sim-pointer" (click)="deleteProduct(product_data.id)">Delete</span>
-      </td>
-    </tr>
-  </tbody>
-</table>
 <div class="modal fade" id="addEditProductModal" tabindex="-1" role="dialog" aria-labelledby="addEditUserTitle"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">

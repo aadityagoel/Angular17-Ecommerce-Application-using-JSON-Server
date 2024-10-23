@@ -1,5 +1,5 @@
 {
-  "user": [
+  "users": [
     {
       "name": "Ashish Mishra",
       "mobNumber": "1234567891",
@@ -80,104 +80,26 @@
       "id": 3
     },
     {
-      "aboutYou": "Something about me..",
-      "age": 31,
-      "agreetc": true,
-      "dob": "1995-12-01",
-      "email": "ashum@gmail.com",
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "somthing.",
-        "addLine2": "near about",
-        "city": "delhi",
-        "state": "UP",
-        "zipCode": "2359865"
-      },
-      "language": [
-        "English",
-        "Hindi"
-      ],
-      "mobNumber": "86744645764",
-      "name": "Mr.Ashu",
-      "password": "123456789",
-      "uploadPhoto": "C:\\fakepath\\Angular 17 Admin (6).png",
-      "role": "buyer",
-      "id": 4
-    },
-    {
-      "aboutYou": "Soasdjalkjdljl",
-      "age": 4,
-      "agreetc": true,
-      "dob": "1998-12-02",
-      "email": "test@gmail.com",
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "hjhjgkhkljljl",
-        "addLine2": "jljklj",
-        "city": "ljljljljl",
-        "state": "MP",
-        "zipCode": "123456"
-      },
-      "language": [
-        "English",
-        "Hindi"
-      ],
-      "mobNumber": "5564646466464",
-      "name": "Test",
-      "password": "123456789",
-      "uploadPhoto": "C:\\fakepath\\Angular 17 Admin (6).png",
-      "role": "seller",
-      "id": 5
-    },
-    {
-      "aboutYou": "aksdkahkshdkh",
-      "age": 78,
-      "agreetc": true,
-      "dob": "5588-02-05",
-      "email": "abhi@gmail.com",
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "46464646",
-        "addLine2": "446",
-        "city": "Uttar Pradesh",
-        "state": "MP",
-        "zipCode": "9865656"
-      },
-      "language": [
-        "English"
-      ],
-      "mobNumber": "877644644464",
-      "name": "abhi",
-      "password": "646464654646",
-      "uploadPhoto": "C:\\fakepath\\Angular 17 Admin (3).png",
-      "role": "buyer",
-      "id": 6
-    },
-    {
-      "aboutYou": "Something About You",
-      "age": 25,
-      "dob": "2000-02-18",
-      "email": "adi@mail.com",
-      "gender": "Male",
-      "address": {
-        "id": 0,
-        "addLine1": "testt",
-        "addLine2": "testst",
-        "city": "tesstt",
-        "state": "...",
-        "zipCode": "133123"
-      },
-      "language": [
-        "Hindi"
-      ],
-      "mobNumber": "1231231231",
+      "id": 1729573765064,
       "name": "Aaditya",
-      "password": "123123",
-      "uploadPhoto": "C:\\fakepath\\IMG_20241005_165124.jpg",
-      "id": 7
+      "mobNumber": "123123123",
+      "email": "adit@mail.com",
+      "age": "24",
+      "dob": "2000-02-18",
+      "password": "456456456",
+      "address": {
+        "addLine1": "Address",
+        "addLine2": "Address 2",
+        "city": "City",
+        "state": "UP",
+        "zipCode": "112221"
+      },
+      "language": "Hindi,Oriya/Odiya,Bengali",
+      "gender": "Female",
+      "aboutYou": "Something About You",
+      "uploadPhoto": "/uploads/1729588363628-screencapture-apex-institute-of-fetal-and-reproductive-onrender-home-2024-09-23-19_57_26.png",
+      "agreetc": false,
+      "role": "admin"
     }
   ],
   "doctors": [

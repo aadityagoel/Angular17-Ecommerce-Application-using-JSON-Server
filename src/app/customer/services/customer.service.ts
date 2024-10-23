@@ -10,7 +10,7 @@ export class CustomerService {
   private single_poduct_id = new BehaviorSubject(null);
   currentProduct = this.single_poduct_id.asObservable();
 
-  public user_url = Constant.JSON_API_URL + "/user/";
+  public user_url = Constant.JSON_API_URL + "/users/";
   public product_url = Constant.JSON_API_URL + "/products/";
   public order_url = Constant.JSON_API_URL + "/orders/";
 
