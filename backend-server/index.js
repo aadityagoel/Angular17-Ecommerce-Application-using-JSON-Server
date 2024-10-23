@@ -15,7 +15,7 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization']  // Allowed headers
 }));
 
-// JSON Server setup for managing doctor and contact data in db.json
+// JSON Server setup for managing doctor, contact, and user data in db.json
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
 
@@ -205,6 +205,124 @@ app.delete('/api/contacts/:id', (req, res) => {
 });
 
 // #endregion 
+
+// #region USER ROUTES
+/****************** USER ROUTES ******************/
+
+// Route to get all users
+app.get('/api/users', (req, res) => {
+    const dbPath = path.join(__dirname, 'db.json');
+    const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+    res.json(dbData.users);
+});
+
+// Route to get a single user by ID
+app.get('/api/users/:id', (req, res) => {
+    const dbPath = path.join(__dirname, 'db.json');
+    const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+    const user = dbData.users.find(u => u.id == req.params.id);
+    if (user) {
+        res.json(user);
+    } else {
+        res.status(404).json({ message: 'User not found' });
+    }
+});
+
+// Route to add a new user (profile photo upload supported)
+app.post('/api/users', upload.fields([{ name: 'uploadPhoto', maxCount: 1 }]), (req, res) => {
+    const dbPath = path.join(__dirname, 'db.json');
+    const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+
+
+    const newUser = {
+        id: Date.now(),
+        name: req.body.name,
+        mobNumber: req.body.mobNumber,
+        email: req.body.email,
+        age: req.body.age,
+        dob: req.body.dob,
+        password: req.body.password,
+        address: {
+            addLine1: req.body.addLine1,
+            addLine2: req.body.addLine2,
+            city: req.body.city,
+            state: req.body.state,
+            zipCode: req.body.zipCode,
+        },
+        language: req.body.language,
+        gender: req.body.gender,
+        aboutYou: req.body.aboutYou,
+        // uploadPhoto: req.file ? `/uploads/${req.file.filename}` : null,  // <-- Correct image upload handling
+        uploadPhoto: req.files['uploadPhoto'] ? `/uploads/${req.files['uploadPhoto'][0].filename}` : null,
+        agreetc: req.body.agreetc === 'true',
+        role: req.body.role
+    };
+
+    dbData.users.push(newUser);
+
+
+    fs.writeFileSync(dbPath, JSON.stringify(dbData, null, 2));
+    res.status(201).json(newUser);
+});
+
+// Route to update an existing user by ID (supports profile photo upload)
+app.put('/api/users/:id', upload.fields([{ name: 'uploadPhoto', maxCount: 1 }]), (req, res) => {
+    const dbPath = path.join(__dirname, 'db.json');
+    const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+
+    const userIndex = dbData.users.findIndex(u => u.id == req.params.id);
+    if (userIndex !== -1) {
+        const existingUser = dbData.users[userIndex];
+
+        const updatedUser = {
+            ...existingUser,
+            name: req.body.name || existingUser.name,
+            mobNumber: req.body.mobNumber || existingUser.mobNumber,
+            email: req.body.email || existingUser.email,
+            age: req.body.age || existingUser.age,
+            dob: req.body.dob || existingUser.dob,
+            password: req.body.password || existingUser.password,
+            address: {
+                addLine1: req.body.addLine1 || existingUser.address.addLine1,
+                addLine2: req.body.addLine2 || existingUser.address.addLine2,
+                city: req.body.city || existingUser.address.city,
+                state: req.body.state || existingUser.address.state,
+                zipCode: req.body.zipCode || existingUser.address.zipCode,
+            },
+            language: req.body.language || existingUser.language,
+            gender: req.body.gender || existingUser.gender,
+            aboutYou: req.body.aboutYou || existingUser.aboutYou,
+            uploadPhoto: req.files['uploadPhoto'] ? `/uploads/${req.files['uploadPhoto'][0].filename}` : existingUser.uploadPhoto,
+            // uploadPhoto: req.file ? `/uploads/${req.file.filename}` : existingUser.uploadPhoto,  // Handle photo update
+            agreetc: req.body.agreetc === 'true',  // Convert string to boolean
+            role: req.body.role || existingUser.role,
+        };
+
+        dbData.users[userIndex] = updatedUser;
+        fs.writeFileSync(dbPath, JSON.stringify(dbData, null, 2));
+        res.json(updatedUser);
+    } else {
+        res.status(404).json({ message: 'User not found' });
+    }
+});
+
+
+// Route to delete a user by ID
+app.delete('/api/users/:id', (req, res) => {
+    const dbPath = path.join(__dirname, 'db.json');
+    const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+
+    const updatedUsers = dbData.users.filter(u => u.id != req.params.id);
+
+    if (updatedUsers.length === dbData.users.length) {
+        return res.status(404).json({ message: 'User not found' });
+    }
+
+    dbData.users = updatedUsers;
+    fs.writeFileSync(dbPath, JSON.stringify(dbData, null, 2));
+    res.json({ message: 'User deleted successfully' });
+});
+// #endregion
 
 /****************** USE JSON SERVER ******************/
 
