@@ -1,19 +1,49 @@
 <div class="container">
   <div class="row justify-content-center align-items-center">
     <div class="col-md-6 my-5">
-      <h3>Admin Login Pannel</h3>
-      <form name="form" #tf="ngForm" (ngSubmit)="tf.form.valid && onSubmitSignIn()" novalidate>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" name="userEmail" class="form-control" [(ngModel)]="signInFormValue.userEmail" #userEmail="ngModel" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" minlength="5" name="userPassword" class="form-control" [(ngModel)]="signInFormValue.userPassword" #userPassword="ngModel" required togglePassword>
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary">Login</button>
-      </div>
+      <h3>Admin Login Panel</h3>
+
+      <!-- Form with ngSubmit and validation -->
+      <form name="form" #tf="ngForm" (ngSubmit)="onSubmitSignIn()" novalidate>
+
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" name="userEmail" class="form-control" [(ngModel)]="signInFormValue.userEmail"
+            #userEmail="ngModel" required [ngClass]="{'is-invalid': userEmail.invalid && userEmail.touched}">
+
+          <!-- Validation Error Message -->
+          <div *ngIf="userEmail.invalid && userEmail.touched" class="text-danger">
+            <small *ngIf="userEmail.errors?.['required']">Email is required.</small>
+            <small *ngIf="userEmail.errors?.['email']">Invalid email format.</small>
+          </div>
+        </div>
+
+        <!-- Password Field with Toggle Visibility -->
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <div class="input-group">
+            <input type="password" class="form-control" minlength="5" name="userPassword" [(ngModel)]="signInFormValue.userPassword"
+              #userPassword="ngModel" required [ngClass]="{'is-invalid': userPassword.invalid && userPassword.touched}"
+              id="passwordInput">
+            <div class="input-group-append">
+              <button type="button" class="form-control btn btn-outline-secondary" (click)="togglePasswordVisibility()">
+                <i class="fa" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Validation Error Message -->
+          <div *ngIf="userPassword.invalid && userPassword.touched" class="text-danger">
+            <small *ngIf="userPassword.errors?.['required']">Password is required.</small>
+            <small *ngIf="userPassword.errors?.['minlength']">Password must be at least 5 characters long.</small>
+          </div>
+        </div>
+
+        <!-- Login Button -->
+        <div class="form-group">
+          <button class="btn btn-primary" [disabled]="tf.form.invalid">Login</button>
+        </div>
       </form>
     </div>
   </div>

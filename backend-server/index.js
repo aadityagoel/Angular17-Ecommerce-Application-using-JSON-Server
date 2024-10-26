@@ -306,7 +306,6 @@ app.put('/api/users/:id', upload.fields([{ name: 'uploadPhoto', maxCount: 1 }]),
     }
 });
 
-
 // Route to delete a user by ID
 app.delete('/api/users/:id', (req, res) => {
     const dbPath = path.join(__dirname, 'db.json');
@@ -323,6 +322,49 @@ app.delete('/api/users/:id', (req, res) => {
     res.json({ message: 'User deleted successfully' });
 });
 // #endregion
+
+// #region Login 
+// User Authentication Route
+app.post('/api/users/auth', (req, res) => {
+    const dbPath = path.join(__dirname, 'db.json');
+    const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+
+    const { email, password } = req.body;
+    const user = dbData.users.find(u => u.email === email && u.password === password);
+
+    if (user) {
+        res.json(user);  // If authenticated, send user data
+    } else {
+        res.status(401).json({ message: 'Invalid credentials' });
+    }
+});
+
+// Admin Authentication Route
+app.post('/api/users/auth/admin', (req, res) => {
+
+    const dbPath = path.join(__dirname, 'db.json');
+    const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+
+    const { email, password } = req.body;
+    const admin = dbData.users.find(u => u.email === email && u.password === password && u.role === 'admin');
+
+    if (admin) {
+        res.json(admin);  // If authenticated, send admin data
+    } else {
+        res.status(401).json({ message: 'Invalid admin credentials' });
+    }
+});
+
+app.post('/api/users', (req, res) => {
+    const newUser = req.body;
+    newUser.id = Date.now(); // Assign a new ID
+    dbData.users.push(newUser);
+
+    fs.writeFileSync(dbPath, JSON.stringify(dbData, null, 2)); // Save new user to db.json
+    res.status(201).json(newUser); // Respond with newly created user
+});
+// #endregion
+
 
 /****************** USE JSON SERVER ******************/
 

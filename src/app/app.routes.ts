@@ -11,7 +11,7 @@ import { SellerDashboardComponent } from './customer/seller/seller-dashboard/sel
 import { BuyerDashboadComponent } from './customer/buyer/buyer-dashboad/buyer-dashboad.component';
 import { CheckoutComponent } from './customer/buyer/checkout/checkout.component';
 import { PageNotFoundComponent } from './shared/layouts/page-not-found/page-not-found.component';
-import { AdminAuthGuardLogin, AdminAuthGaurdService, BuyerAuthGaurdService, SellerAuthGaurdService, SellerBuyerAuthGuardLogin } from './shared/services/auth-guard.service';
+import { AdminAuthGuardLogin, AdminAuthGuardService, DoctorAuthGuardLogin, DoctorAuthGuardService, UserAuthGuardService } from './shared/services/auth-guard.service';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { ManageDoctorComponent } from './admin/manage-doctor/manage-doctor.component';
 import { ManageContactComponent } from './admin/manage-contact/manage-contact.component';
@@ -22,6 +22,7 @@ export const routes: Routes = [
   { path: "my-profile", component: UserProfileComponent },
   { path: "contact-us", component: ContactUsComponent },
   { path: "doctors", component: DoctorsComponent },
+
   //admin
   {
     path: '', canActivate: [AdminAuthGuardLogin], children: [
@@ -29,7 +30,7 @@ export const routes: Routes = [
     ]
   },
   {
-    path: '', canActivate: [AdminAuthGaurdService], children: [
+    path: '', canActivate: [AdminAuthGuardService], children: [
       { path: "admin-dashboard", component: AdminDashboardComponent },
       { path: "admin/user", component: UserCrudComponent },
       { path: "admin/product", component: ProductComponent },
@@ -38,19 +39,22 @@ export const routes: Routes = [
     ]
   },
   {
-    path: '', canActivate: [SellerBuyerAuthGuardLogin], children: [
+    path: '', 
+    canActivate: [DoctorAuthGuardLogin], 
+    // canActivate: [AdminAuthGuardLogin, DoctorAuthGuardLogin],
+    children: [
       { path: "sign-in", component: SigninSignupComponent },
       { path: "sign-up", component: SigninSignupComponent },
     ]
   },
   {
-    path: '', canActivate: [SellerAuthGaurdService], children: [
+    path: '', canActivate: [DoctorAuthGuardService], children: [
       { path: "seller-dashboard", component: SellerDashboardComponent },
       { path: "seller/product", component: ProductComponent }
     ]
   },
   {
-    path: '', canActivate: [BuyerAuthGaurdService], children: [
+    path: '', canActivate: [UserAuthGuardService], children: [
       { path: "buyer-dashboard", component: BuyerDashboadComponent },
       { path: "checkout", component: CheckoutComponent }
     ]

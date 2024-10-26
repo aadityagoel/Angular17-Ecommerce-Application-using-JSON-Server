@@ -1,82 +1,69 @@
 {
   "users": [
     {
-      "name": "Ashish Mishra",
-      "mobNumber": "1234567891",
-      "age": 29,
-      "dob": "1995-05-12",
-      "email": "admin@gmail.com",
-      "password": "123456",
+      "name": "Ashish Mishra Admin",
+      "mobNumber": "1234567892",
+      "age": "30",
+      "dob": "1998-05-12",
+      "email": "admin@mail.com",
+      "password": "123123123",
       "address": {
-        "addLine1": "District Center",
-        "addLine2": "Janakpuri",
-        "city": "New Delhi",
-        "state": "Delhi",
-        "zipCode": "110052"
+        "addLine1": "District Center 1",
+        "addLine2": "Janakpuri 1",
+        "city": "New Delhi 1",
+        "state": "MP",
+        "zipCode": "110051"
       },
-      "language": [
-        "English",
-        "Hindi",
-        "Bhojpuri",
-        "Telgu",
-        "Kannad"
-      ],
-      "gender": "Male",
-      "aboutYou": "I am a programmer...",
-      "uploadPhoto": "ashish.png",
-      "agreetc": true,
+      "language": "English,Hindi,Oriya/Odiya,Bengali",
+      "gender": "Female",
+      "aboutYou": "I am a programmer......",
+      "uploadPhoto": "/uploads/1729854493303-IMG_20241005_165124.jpg",
+      "agreetc": false,
       "role": "admin",
       "id": 1
     },
     {
       "aboutYou": "HGHJBHMBMBNHTRTYRYgfhfjfjh",
-      "age": 29,
+      "age": "29",
       "agreetc": true,
       "dob": "2024-01-02",
       "email": "asdd@gghh.com",
       "gender": "Male",
       "address": {
-        "id": 0,
         "addLine1": "876444654",
         "addLine2": "FFFFHFGHHGFH",
         "city": "GFHFHFFHG",
         "state": "...",
         "zipCode": "86764664646"
       },
-      "language": [
-        "Hindi"
-      ],
+      "language": "Hindi",
       "mobNumber": "8446878784466465",
       "name": "TESTY CODEIZ",
       "password": "123456789",
       "uploadPhoto": "C:\\fakepath\\Angular 15 (29).png",
-      "role": "seller",
+      "role": "doctor",
       "id": 2
     },
     {
       "aboutYou": "Ashish here , You can learn Angular",
-      "age": 29,
+      "age": "29",
       "agreetc": true,
       "dob": "1999-06-07",
       "email": "ashish@gmail.com",
       "gender": "Male",
       "address": {
-        "id": 0,
         "addLine1": "new delho",
         "addLine2": "wx -1520",
         "city": "delhi",
         "state": "...",
         "zipCode": "325863558"
       },
-      "language": [
-        "English",
-        "Hindi"
-      ],
+      "language": "English,Hindi",
       "mobNumber": "83685222555",
       "name": "Ashish Mishra",
       "password": "123456789",
       "uploadPhoto": "C:\\fakepath\\Angular 15 (32).png",
-      "role": "buyer",
+      "role": "user",
       "id": 3
     },
     {
@@ -100,6 +87,53 @@
       "uploadPhoto": "/uploads/1729588363628-screencapture-apex-institute-of-fetal-and-reproductive-onrender-home-2024-09-23-19_57_26.png",
       "agreetc": false,
       "role": "admin"
+    },
+    {
+      "id": 1729928184764,
+      "name": "ncbhuhu",
+      "mobNumber": "17866868686",
+      "email": "bfbfbhjbb@jbbff.jdj",
+      "age": "77",
+      "dob": "2000-12-12",
+      "password": "8jhhgnvhyfh",
+      "address": {
+        "addLine1": "nvnf hfbu  ",
+        "addLine2": "fhiuhfijf fifiiubn ",
+        "city": "iouhuf ",
+        "state": "UP",
+        "zipCode": "345555"
+      },
+      "language": "Hindi,Oriya/Odiya,Bengali",
+      "gender": "Male",
+      "aboutYou": "fkjhugjytutyv",
+      "uploadPhoto": "/uploads/1729928184594-IMG_20241005_165119.jpg",
+      "agreetc": false,
+      "role": [
+        "user",
+        "user"
+      ]
+    },
+    {
+      "id": 1729928348307,
+      "name": "epjfhiyergu",
+      "mobNumber": "2434555666",
+      "email": "fjhfggo@njnf.dd",
+      "age": "22",
+      "dob": "2000-12-12",
+      "password": "vnkvkjbkkjfbkjbkjb",
+      "address": {
+        "addLine1": "onvjnjknkjbnjk",
+        "addLine2": "knkjnkjnk",
+        "city": "nkjnjinij",
+        "state": "UP",
+        "zipCode": "555555"
+      },
+      "language": "Oriya/Odiya,Bengali",
+      "gender": "Female",
+      "aboutYou": "fnhguyyub",
+      "uploadPhoto": "/uploads/1729928348061-IMG_20241005_165119.jpg",
+      "agreetc": false,
+      "role": "user"
     }
   ],
   "doctors": [
