@@ -114,11 +114,20 @@
       </div>
       <div class="wrap-core-nav-list right">
         <ul class="menu core-nav-list">
-          <li class="scrollspy active"><a href="/home">Home</a></li>
+          <li class="scrollspy active"><a routerLink="/home">Home</a></li>
+          <li class="scrollspy" *ngIf="user_role =='admin'">
+            <a routerLink="/admin-dashboard">Dashboard</a>
+          </li>
+          <li class="scrollspy" *ngIf="user_role =='admin'">
+            <a routerLink="/admin/user">Manage Users</a>
+          </li>
+          <li class="scrollspy" *ngIf="user_role =='admin'">
+            <a routerLink="/admin/manage-doctor">Manage Doctors</a>
+          </li>
           <!-- <li class="scrollspy"><a href="#services">Services</a></li> -->
           <!-- <li class="scrollspy"><a href="#appointment">Appointment</a></li> -->
           <!-- <li class="scrollspy"><a href="#testimonials">Testimonials</a></li> -->
-          <li class="scrollspy"><a routerLink="/doctors">Doctor</a></li>
+          <li class="scrollspy" *ngIf="user_role !='admin'"><a routerLink="/doctors">Doctor</a></li>
           <!-- <li class="scrollspy"><a href="#blog">News</a></li> -->
           <li class="scrollspy"><a routerLink="/contact-us">Contact</a></li>
         </ul>
