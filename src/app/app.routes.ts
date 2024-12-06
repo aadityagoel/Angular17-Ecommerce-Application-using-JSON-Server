@@ -15,6 +15,8 @@ import { AdminAuthGuardLogin, AdminAuthGuardService, DoctorAuthGuardLogin, Docto
 import { DoctorsComponent } from './doctors/doctors.component';
 import { ManageDoctorComponent } from './admin/manage-doctor/manage-doctor.component';
 import { ManageContactComponent } from './admin/manage-contact/manage-contact.component';
+import { AllCoursesComponent } from './all-courses/all-courses.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
 
 export const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
@@ -22,6 +24,8 @@ export const routes: Routes = [
   { path: "my-profile", component: UserProfileComponent },
   { path: "contact-us", component: ContactUsComponent },
   { path: "doctors", component: DoctorsComponent },
+  { path: "all-courses", component: AllCoursesComponent },
+  { path: 'course-detail/:id', component: CourseDetailComponent },
 
   //admin
   {

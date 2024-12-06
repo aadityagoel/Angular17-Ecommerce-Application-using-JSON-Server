@@ -1,0 +1,33 @@
+<div class="container my-5">
+    <h2>Course Details: {{ courseContent?.name }}</h2>
+
+    <div *ngIf="courseContent; else noContent">
+        <!-- Display PDF in iframe -->
+        <div *ngIf="courseContent.pdf">
+            <h4>About Course (PDF):</h4>
+            <iframe [src]="courseContent.pdf | safeResourceUrl" width="100%" height="700px" frameborder="0"></iframe>
+        </div>
+
+        <!-- Display Images -->
+        <div *ngIf="courseContent.images.length > 0" class="mt-4">
+            <h4>About Course (Images):</h4>
+            <div class="row">
+                <div class="col-md-4" *ngFor="let img of courseContent.images">
+                    <!-- Thumbnail -->
+                    <img [src]="img" class="img-fluid mb-3" alt="Course Image" (click)="viewImage(img)" style="cursor: pointer;"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fallback if no content -->
+    <ng-template #noContent>
+        <p>No course details found for the selected course.</p>
+    </ng-template>
+
+    <!-- Full-Page Image Modal -->
+    <div *ngIf="selectedImage" class="image-modal" (click)="closeImage()">
+        <img [src]="selectedImage" class="full-image" />
+    </div>
+</div>

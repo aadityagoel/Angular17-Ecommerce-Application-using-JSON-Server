@@ -1,0 +1,87 @@
+<section class="Courses-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 section-header-box my-30">
+                <div class="section-header text-center">
+                    <h2>Available Courses</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs for Short Term and Long Term Courses -->
+        <ul class="nav nav-tabs justify-content-center" id="courseTabs" role="tablist">
+            <li class="nav-item">
+                <button class="nav-link active" id="short-term-tab" data-bs-toggle="tab" data-bs-target="#short-term"
+                    type="button" role="tab" aria-controls="short-term" aria-selected="true">
+                    Short Term Courses
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" id="long-term-tab" data-bs-toggle="tab" data-bs-target="#long-term"
+                    type="button" role="tab" aria-controls="long-term" aria-selected="false">
+                    Long Term Courses
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="courseTabsContent">
+            <!-- Short Term Courses -->
+            <div class="tab-pane fade show active" id="short-term" role="tabpanel" aria-labelledby="short-term-tab">
+                <div class="row mb-50 mt-30">
+                    <div class="col-sm-4 col-12 mb-30 xs-mb-30">
+                        <div class="card">
+                            <img class="card-img-top" src="assets\images\blog-01.jpg" alt="Short Course 1">
+                            <div class="card-body">
+                                <h4 class="card-title">Basic Diagnostic & Therapeutic Intervention Course</h4>
+                                <p class="card-text">Course for Practicing Professionals for Two Full Days. </p>
+                                <p class="card-text">Batch : 3 - 4 May 2025</p>
+                                <a [routerLink]="['/course-detail', 1]" class="mt-20 btn btn-primary">Course Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-4 col-12 mb-30 xs-mb-30">
+                        <div class="card">
+                            <img class="card-img-top" src="assets\images\blog-01.jpg" alt="Short Course 2">
+                            <div class="card-body">
+                                <h4 class="card-title">Short Term Course 2</h4>
+                                <p class="card-text">Master the fundamentals of Python programming in 4 weeks.</p>
+                                <p class="card-text">Duration: 4 weeks</p>
+                                <a href="#" class="btn btn-primary">Course Detail</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- Long Term Courses -->
+            <div class="tab-pane fade" id="long-term" role="tabpanel" aria-labelledby="long-term-tab">
+                <div class="row mb-50 mt-30">
+                    <div class="col-sm-4 col-12 mb-30 xs-mb-30">
+                        <div class="card">
+                            <img class="card-img-top" src="assets\images\blog-02.jpg" alt="Long Course 1">
+                            <div class="card-body">
+                                <h4 class="card-title">Advanced Fetal Medicine Course</h4>
+                                <p class="card-text">A comprehensive 6-Weekends course in Fetal Medicine and Advanced
+                                    Obstetric Ultrasound</p>
+                                <p class="card-text">Batch Start from July 2025</p>
+                                <a [routerLink]="['/course-detail', 2]" class="mt-20 btn btn-primary">Course Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-4 col-12 mb-30 xs-mb-30 d-none">
+                        <div class="card">
+                            <img class="card-img-top" src="assets\images\blog-01.jpg" alt="Long Course 2">
+                            <div class="card-body">
+                                <h4 class="card-title">Long Term Course 2</h4>
+                                <p class="card-text">Deep dive into data science and machine learning in 1 year.</p>
+                                <p class="card-text">Duration: 1 year</p>
+                                <a href="#" class="btn btn-primary">Course Detail</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
